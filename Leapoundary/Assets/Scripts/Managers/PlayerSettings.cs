@@ -60,8 +60,17 @@ public class PlayerSettings : MonoBehaviour
     {
         //Moving CurrentTurret to NextTurret position and then generating NextTurret new position
         currentTurret.transform.position = nextTurret.transform.position;
-        nextTurret.transform.position = new Vector2(Random.Range(-7.5f, 7.5f), Random.Range(-3.5f, 3.5f));
+        do
+        {
+            nextTurret.transform.position = new Vector2(Random.Range(-7.5f, 7.5f), Random.Range(-3.5f, 3.5f));
+        } while(IsSpawnPointOverlap(nextTurret.transform.position));
         leaps++;
+    }
+
+    public bool IsSpawnPointOverlap(Vector3 position)
+    {
+        Debug.Log("UsingThis!");
+        return Physics.CheckSphere(position, 2f, LayerMask.NameToLayer("Enemies"), QueryTriggerInteraction.Collide);
     }
 
     public void GetCrosshairDirection(GameObject obj)

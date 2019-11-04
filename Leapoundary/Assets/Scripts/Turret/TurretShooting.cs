@@ -12,8 +12,7 @@ public class TurretShooting : MonoBehaviour
     {
         ps = gameManager.GetComponent<PlayerSettings>(); 
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         if(CanShoot() && Input.GetKeyDown(KeyCode.Mouse0))
@@ -25,7 +24,6 @@ public class TurretShooting : MonoBehaviour
     private void ShootBall()
     {
         ps.GetCrosshairDirection(gameObject);
-        //ps.ball.GetComponent<Rigidbody2D>().velocity = ps.ballSpeed * ballDirection * Time.fixedDeltaTime;
         ps.ball.GetComponent<Rigidbody2D>().AddForce(ps.ballSpeed * transform.right * Time.fixedDeltaTime, ForceMode2D.Impulse);
         ps.ball.transform.parent = null;
     }

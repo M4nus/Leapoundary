@@ -34,6 +34,11 @@ public class EnemySpawner : MonoBehaviour
 
     private Vector3 SpawnPosition()
     {
-        return new Vector3(Random.Range(-7.5f, 7.5f), Random.Range(-3.5f, 3.5f), 0f);
+        Vector3 newPosition;
+        do
+        {
+            newPosition = new Vector3(Random.Range(-7.5f, 7.5f), Random.Range(-3.5f, 3.5f), 0f);
+        } while(PlayerSettings.instance.IsSpawnPointOverlap(newPosition));
+        return newPosition;
     }
 }
