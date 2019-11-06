@@ -69,8 +69,8 @@ public class PlayerSettings : MonoBehaviour
 
     public bool IsSpawnPointOverlap(Vector3 position)
     {
-        Debug.Log("UsingThis!");
-        return Physics.CheckSphere(position, 2f, LayerMask.NameToLayer("Enemies"), QueryTriggerInteraction.Collide);
+        Debug.Log("Overlap: " + Physics2D.OverlapCircle(position, 0.8f));
+        return Physics2D.OverlapCircle(position, 0.8f);
     }
 
     public void GetCrosshairDirection(GameObject obj)

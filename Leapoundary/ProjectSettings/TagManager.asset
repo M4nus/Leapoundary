@@ -16,7 +16,7 @@ TagManager:
   - Ball
   - Turret
   - Enemies
-  - 
+  - BlockingCollider
   - 
   - 
   - 
