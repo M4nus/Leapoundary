@@ -9,6 +9,9 @@ public class Leaps : MonoBehaviour
     
     void Update()
     {
-        text.text = "" + PlayerSettings.instance.leaps;
+        if(PlayerSettings.instance.ballState == BallState.Death)
+            text.text = "Leaps: " + PlayerSettings.instance.leaps;
+        else
+            text.text = "" + PlayerSettings.instance.leaps;
     }
 }

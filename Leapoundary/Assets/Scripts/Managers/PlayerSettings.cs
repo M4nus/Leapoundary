@@ -6,7 +6,8 @@ public enum BallState
 {
     Safe,
     Launched,
-    Upgrade
+    Upgrade,
+    Death
 }
 
 public class PlayerSettings : MonoBehaviour
@@ -14,7 +15,7 @@ public class PlayerSettings : MonoBehaviour
     // Script with all the variables needed for ball, turret, enemies
     public static PlayerSettings instance;
 
-    public BallState ballState;
+    public BallState ballState = BallState.Safe;
 
     public GameObject ball;
     public GameObject currentTurret;
@@ -41,18 +42,20 @@ public class PlayerSettings : MonoBehaviour
             instance = this;
         else
             Destroy(gameObject);
-        DontDestroyOnLoad(gameObject);
     }
 
     private void Update()
     {
         // Checking whether ball was launched or not
-        if(ball.transform.parent == currentTurret.transform && !upgradeTime)
-            ballState = BallState.Safe;
-        else if(ball.transform.parent != currentTurret.transform)
-            ballState = BallState.Launched;
-        else if(ball.transform.parent == currentTurret.transform && upgradeTime)
-            ballState = BallState.Upgrade;
+        if(ballState != BallState.Death)
+        {
+            if(ball.transform.parent == currentTurret.transform && !upgradeTime)
+                ballState = BallState.Safe;
+            else if(ball.transform.parent != currentTurret.transform)
+                ballState = BallState.Launched;
+            else if(ball.transform.parent == currentTurret.transform && upgradeTime)
+                ballState = BallState.Upgrade;
+        }
 
         // Checking if we can spawn enemies
         canSpawnTriangle = (ballState == BallState.Upgrade || GameObject.FindGameObjectsWithTag("Triangle").Length >= triangleLimit) ? false : true;
@@ -61,6 +64,7 @@ public class PlayerSettings : MonoBehaviour
         // Cheats
         if(Input.GetKeyDown(KeyCode.R))
             ResetBall();
+        
     }
 
     public void ResetBall()
@@ -73,13 +77,13 @@ public class PlayerSettings : MonoBehaviour
 
     public void HurtBall()
     {
-        if(lives > 0)
+        if(lives > 1)
         {
             lives--;
         }
         else
         {
-            Debug.Log("Death");
+            ballState = BallState.Death;
         }
     }
 
