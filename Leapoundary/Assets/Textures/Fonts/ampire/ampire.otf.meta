@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 3d14258b172799248827094688bb7f04
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Ampire
+  fontNames:
+  - Ampire
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: f642928ca71e3dd479fc15a57bc5ae71, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

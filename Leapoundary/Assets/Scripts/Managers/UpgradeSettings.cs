@@ -29,7 +29,6 @@ public class UpgradeSettings : MonoBehaviour
 
     #endregion
 
-
     #region Positive
     public void GiveHeart(int amount)
     {

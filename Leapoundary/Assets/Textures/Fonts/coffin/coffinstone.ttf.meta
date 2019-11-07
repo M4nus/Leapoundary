@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 193011b4c394b504bb8e69348cb04522
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Coffin Stone
+  fontNames:
+  - Coffin Stone
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 900c38a8cec5389438e0c6abcba242ac, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

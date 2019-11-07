@@ -16,10 +16,13 @@ public class Triangle : MonoBehaviour
         if(PlayerSettings.instance.ballState == BallState.Launched)
             ChaseBall();
         else
-        {
-            rb.velocity = Vector3.zero;
-            rb.angularVelocity = 0f;
-        }
+            StopTriangle();
+    }
+
+    private void StopTriangle()
+    {
+        rb.velocity = Vector3.zero;
+        rb.angularVelocity = 0f;
     }
 
     private void ChaseBall()
