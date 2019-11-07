@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
+    public static EnemySpawner instance;
+
     public GameObject triangle;
     public GameObject stander;
 
@@ -18,8 +20,9 @@ public class EnemySpawner : MonoBehaviour
     {
         while(true)
         {
-            Instantiate(triangle, SpawnPosition(), Quaternion.identity);
-            yield return new WaitForSeconds(10f);
+            if(PlayerSettings.instance.canSpawnTriangle)
+                Instantiate(triangle, SpawnPosition(), Quaternion.identity);
+            yield return new WaitForSeconds(PlayerSettings.instance.triangleSpawnTime);
         }
     }
 
@@ -27,8 +30,9 @@ public class EnemySpawner : MonoBehaviour
     {
         while(true)
         {
-            Instantiate(stander, SpawnPosition(), Quaternion.identity);
-            yield return new WaitForSeconds(14f);
+            if(PlayerSettings.instance.canSpawnStander)
+                Instantiate(stander, SpawnPosition(), Quaternion.identity);
+            yield return new WaitForSeconds(PlayerSettings.instance.standerSpawnTime);
         }
     }
 

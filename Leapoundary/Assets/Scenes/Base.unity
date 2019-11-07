@@ -276,80 +276,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 10, y: 2}
   m_EdgeRadius: 0
---- !u!1001 &295770518
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 5996384681887338466, guid: 13417be2d403f864ca82e1d7af4a4796,
-        type: 3}
-      propertyPath: m_Name
-      value: Triangle
-      objectReference: {fileID: 0}
-    - target: {fileID: 5996384681887338468, guid: 13417be2d403f864ca82e1d7af4a4796,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -3.5281634
-      objectReference: {fileID: 0}
-    - target: {fileID: 5996384681887338468, guid: 13417be2d403f864ca82e1d7af4a4796,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.0653636
-      objectReference: {fileID: 0}
-    - target: {fileID: 5996384681887338468, guid: 13417be2d403f864ca82e1d7af4a4796,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5996384681887338468, guid: 13417be2d403f864ca82e1d7af4a4796,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5996384681887338468, guid: 13417be2d403f864ca82e1d7af4a4796,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5996384681887338468, guid: 13417be2d403f864ca82e1d7af4a4796,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5996384681887338468, guid: 13417be2d403f864ca82e1d7af4a4796,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5996384681887338468, guid: 13417be2d403f864ca82e1d7af4a4796,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5996384681887338468, guid: 13417be2d403f864ca82e1d7af4a4796,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5996384681887338468, guid: 13417be2d403f864ca82e1d7af4a4796,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5996384681887338468, guid: 13417be2d403f864ca82e1d7af4a4796,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5996384681887338467, guid: 13417be2d403f864ca82e1d7af4a4796,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 13417be2d403f864ca82e1d7af4a4796, type: 3}
 --- !u!1 &297441662
 GameObject:
   m_ObjectHideFlags: 0
@@ -5574,6 +5500,7 @@ GameObject:
   - component: {fileID: 1197128577}
   - component: {fileID: 1197128576}
   - component: {fileID: 1197128578}
+  - component: {fileID: 1197128579}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -5599,9 +5526,16 @@ MonoBehaviour:
   nextTurret: {fileID: 864234840}
   lives: 3
   leaps: 0
+  triangleLimit: 5
+  standerLimit: 7
   ballSpeed: 500
-  triangleSpeed: 7
-  randomerSpeed: 5
+  triangleSpeed: 2
+  triangleRotate: 200
+  triangleSpawnTime: 15
+  standerSpawnTime: 10
+  upgradeTime: 0
+  canSpawnTriangle: 1
+  canSpawnStander: 1
 --- !u!4 &1197128577
 Transform:
   m_ObjectHideFlags: 0
@@ -5631,6 +5565,18 @@ MonoBehaviour:
   triangle: {fileID: 5996384681887338466, guid: 13417be2d403f864ca82e1d7af4a4796,
     type: 3}
   stander: {fileID: 6688696350630559392, guid: 7a928e0b5e8e7ca48bc969c533fcf428, type: 3}
+--- !u!114 &1197128579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1197128575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7303ad7385f7ffe4aa8db018ea6900df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1243261279
 GameObject:
   m_ObjectHideFlags: 0

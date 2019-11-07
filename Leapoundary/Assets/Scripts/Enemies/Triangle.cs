@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class Triangle : MonoBehaviour
 {
-    private float speed = 2f;
-    private float rotateSpeed = 200f;
-
     private Rigidbody2D rb;
     
     void Start()
@@ -31,13 +28,16 @@ public class Triangle : MonoBehaviour
         direction.Normalize();
 
         float rotateAmount = Vector3.Cross(direction, transform.up).z;
-        rb.angularVelocity = -rotateAmount * rotateSpeed;
-        rb.velocity = transform.up * speed;
+        rb.angularVelocity = -rotateAmount * PlayerSettings.instance.triangleRotate;
+        rb.velocity = transform.up * PlayerSettings.instance.triangleSpeed;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.layer == LayerMask.NameToLayer("Ball"))
+        {
             PlayerSettings.instance.ResetBall();
+            PlayerSettings.instance.HurtBall();
+        }
     }
 }

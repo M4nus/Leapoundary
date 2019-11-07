@@ -5,7 +5,8 @@ using UnityEngine;
 public enum BallState
 {
     Safe,
-    Launched
+    Launched,
+    Upgrade
 }
 
 public class PlayerSettings : MonoBehaviour
@@ -19,11 +20,19 @@ public class PlayerSettings : MonoBehaviour
     public GameObject currentTurret;
     public GameObject nextTurret;
 
-    public int lives;
+    public int lives = 3;
     public int leaps = 0;
+    public int triangleLimit = 5;
+    public int standerLimit = 7;
+    [Range(300, 1000)]
     public float ballSpeed;
-    public float triangleSpeed;
-    public float randomerSpeed;
+    public float triangleSpeed = 1f;
+    public float triangleRotate = 200f;
+    public float triangleSpawnTime = 15f;
+    public float standerSpawnTime = 10f;
+    public bool upgradeTime = false;
+    public bool canSpawnTriangle = true;
+    public bool canSpawnStander = true;
 
 
     private void Awake()
@@ -37,28 +46,46 @@ public class PlayerSettings : MonoBehaviour
 
     private void Update()
     {
-        //Checking whether ball was launched or not
-        if(ball.transform.parent == currentTurret.transform)
+        // Checking whether ball was launched or not
+        if(ball.transform.parent == currentTurret.transform && !upgradeTime)
             ballState = BallState.Safe;
         else if(ball.transform.parent != currentTurret.transform)
             ballState = BallState.Launched;
+        else if(ball.transform.parent == currentTurret.transform && upgradeTime)
+            ballState = BallState.Upgrade;
 
-        //Cheats
+        // Checking if we can spawn enemies
+        canSpawnTriangle = (ballState == BallState.Upgrade || GameObject.FindGameObjectsWithTag("Triangle").Length >= triangleLimit) ? false : true;
+        canSpawnStander = (ballState == BallState.Upgrade || GameObject.FindGameObjectsWithTag("Stander").Length >= standerLimit) ? false : true;
+
+        // Cheats
         if(Input.GetKeyDown(KeyCode.R))
             ResetBall();
     }
 
     public void ResetBall()
     {
-        //Setting ball in CurrentTurret
+        // Setting ball in CurrentTurret
         ball.transform.parent = currentTurret.transform;
         ball.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
         ball.transform.position = currentTurret.transform.position;
     }
 
+    public void HurtBall()
+    {
+        if(lives > 0)
+        {
+            lives--;
+        }
+        else
+        {
+            Debug.Log("Death");
+        }
+    }
+
     public void MoveTurrets()
     {
-        //Moving CurrentTurret to NextTurret position and then generating NextTurret new position
+        // Moving CurrentTurret to NextTurret position and then generating NextTurret new position
         currentTurret.transform.position = nextTurret.transform.position;
         do
         {
@@ -69,7 +96,7 @@ public class PlayerSettings : MonoBehaviour
 
     public bool IsSpawnPointOverlap(Vector3 position)
     {
-        Debug.Log("Overlap: " + Physics2D.OverlapCircle(position, 0.8f));
+        // Checking if we are spawning on some other collider
         return Physics2D.OverlapCircle(position, 0.8f);
     }
 
