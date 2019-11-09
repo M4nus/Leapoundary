@@ -14,8 +14,8 @@ public class Hearts : MonoBehaviour
     void CheckLives()
     {
         if(heartID > PlayerSettings.instance.lives)
-            gameObject.SetActive(false);
+            gameObject.transform.GetChild(0).gameObject.SetActive(false);
         else
-            gameObject.SetActive(true);
+            gameObject.transform.GetChild(0).gameObject.SetActive(true);
     }
 }

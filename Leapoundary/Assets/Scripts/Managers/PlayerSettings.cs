@@ -15,16 +15,18 @@ public class PlayerSettings : MonoBehaviour
     // Script with all the variables needed for ball, turret, enemies
     public static PlayerSettings instance;
 
-    public BallState ballState = BallState.Safe;
+    public BallState ballState = BallState.Upgrade;
 
     public GameObject ball;
     public GameObject currentTurret;
     public GameObject nextTurret;
+    public GameObject cardsTab;
 
     public int lives = 3;
     public int leaps = 0;
     public int triangleLimit = 5;
     public int standerLimit = 7;
+    public int cardType;
     [Range(300, 1000)]
     public float ballSpeed;
     public float triangleSpeed = 1f;
@@ -57,14 +59,25 @@ public class PlayerSettings : MonoBehaviour
                 ballState = BallState.Upgrade;
         }
 
+        if(ballState == BallState.Upgrade)
+            cardsTab.SetActive(true);
+        else
+            cardsTab.SetActive(false);
+
         // Checking if we can spawn enemies
         canSpawnTriangle = (ballState == BallState.Upgrade || GameObject.FindGameObjectsWithTag("Triangle").Length >= triangleLimit) ? false : true;
         canSpawnStander = (ballState == BallState.Upgrade || GameObject.FindGameObjectsWithTag("Stander").Length >= standerLimit) ? false : true;
+    }
 
-        // Cheats
-        if(Input.GetKeyDown(KeyCode.R))
-            ResetBall();
-        
+    public void CheckLeaps()
+    {
+        leaps++;
+        if(leaps % 5 == 0)
+        {
+            //0 - positive, 1 - negative, 2 - neutral;
+            cardType = Random.Range(0, 3);
+            upgradeTime = true;
+        }
     }
 
     public void ResetBall()
@@ -77,14 +90,10 @@ public class PlayerSettings : MonoBehaviour
 
     public void HurtBall()
     {
-        if(lives > 1)
-        {
+        if(lives > 0)
             lives--;
-        }
         else
-        {
             ballState = BallState.Death;
-        }
     }
 
     public void MoveTurrets()
@@ -95,7 +104,7 @@ public class PlayerSettings : MonoBehaviour
         {
             nextTurret.transform.position = new Vector2(Random.Range(-7.5f, 7.5f), Random.Range(-3.5f, 3.5f));
         } while(IsSpawnPointOverlap(nextTurret.transform.position));
-        leaps++;
+        CheckLeaps();
     }
 
     public bool IsSpawnPointOverlap(Vector3 position)

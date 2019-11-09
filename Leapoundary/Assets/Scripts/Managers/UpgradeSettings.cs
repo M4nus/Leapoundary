@@ -7,8 +7,9 @@ public class UpgradeSettings : MonoBehaviour
     #region Negative
     public void RemoveHeart(int amount)
     {
-        for(int i=0; i<amount; i++)
+        //for(int i=0; i<amount; i++)
             PlayerSettings.instance.HurtBall();
+        Debug.Log("RemoveHeart: " + PlayerSettings.instance.lives);
     }
 
     public void DecreaseBallSpeed(float amount)
@@ -32,10 +33,11 @@ public class UpgradeSettings : MonoBehaviour
     #region Positive
     public void GiveHeart(int amount)
     {
-        PlayerSettings.instance.lives += amount;
+        PlayerSettings.instance.lives++;//= amount;
+        Debug.Log("GiveHeart: " + PlayerSettings.instance.lives);
 
-        if(PlayerSettings.instance.lives > 5)
-            PlayerSettings.instance.lives = 5;
+        //if(PlayerSettings.instance.lives > 5)
+         //   PlayerSettings.instance.lives = 5;
     }
 
     public void IncreaseBallSpeed(float amount)
