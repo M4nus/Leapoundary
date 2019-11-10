@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   symbol: {fileID: 21300000, guid: 30f5fae9b7cfe4a4681172db778b3c30, type: 3}
   material: {fileID: 2100000, guid: 0b02d7ee5d7ffb944975a65d7e9d2338, type: 2}
-  button: {fileID: 8940891832231041229, guid: 7efa6b45bb2274f499c7843f568ac514, type: 3}
   name: Triangle
   description: +1 triangle limit
-  methodName: RemoveHeart(1)
+  methodName: AddEnemyTypeAmount(Triangle, 1)

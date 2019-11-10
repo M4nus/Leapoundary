@@ -16,9 +16,9 @@ public class CardDisplay : MonoBehaviour
     
     public Image symbolImage;
     public Button button;
-    public TextMeshProUGUI nameText;
+    public TextMeshProUGUI titleText;
     public TextMeshProUGUI descriptionText;
-    public new SpriteRenderer renderer;
+    public new Image renderer;
 
     private UnityAction _myAction;
     private PlayerSettings gameManager;
@@ -45,7 +45,7 @@ public class CardDisplay : MonoBehaviour
         _myAction = () => { InvokeAction(card.methodName); };
 
         symbolImage.sprite = card.symbol;
-        nameText.text = card.name;
+        titleText.text = card.name;
         descriptionText.text = card.description;
         renderer.material = card.material;
         button.onClick.AddListener(_myAction);
@@ -63,7 +63,7 @@ public class CardDisplay : MonoBehaviour
 
         method.Invoke(us, functionParameters);
         Debug.Log("Button: " + button.transform.parent.parent);
-        //PlayerSettings.instance.upgradeTime = false;
+        PlayerSettings.instance.upgradeTime = false;
     }
 
     private string GetMethodName(string eventData)

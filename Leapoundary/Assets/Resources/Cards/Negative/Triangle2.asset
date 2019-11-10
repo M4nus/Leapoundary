@@ -16,4 +16,4 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: 0b02d7ee5d7ffb944975a65d7e9d2338, type: 2}
   name: Triangle
   description: +2 triangle limit
-  methodName: RemoveHeart(1)
+  methodName: AddEnemyTypeAmount(Triangle, 2)
