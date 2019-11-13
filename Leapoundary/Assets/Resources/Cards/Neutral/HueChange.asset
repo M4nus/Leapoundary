@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c63d2c7f3070d3a48a3d7042029ff764, type: 3}
   m_Name: HueChange
   m_EditorClassIdentifier: 
-  symbol: {fileID: 21300000, guid: 49e2502da703dd54d935f8c28172518c, type: 3}
+  symbol: {fileID: 21300000, guid: 5c1073d6772fff9498648235a78fffc2, type: 3}
   material: {fileID: 2100000, guid: 20ba613c6ab1aad43abd50b32a73a7a6, type: 2}
-  button: {fileID: 8940891832231041229, guid: 7efa6b45bb2274f499c7843f568ac514, type: 3}
   name: Hue change
   description: Changing hue to different colors
   methodName: GiveHeart(2)

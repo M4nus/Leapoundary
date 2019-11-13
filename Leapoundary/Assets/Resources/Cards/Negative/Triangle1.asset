@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c63d2c7f3070d3a48a3d7042029ff764, type: 3}
   m_Name: Triangle1
   m_EditorClassIdentifier: 
-  symbol: {fileID: 21300000, guid: 30f5fae9b7cfe4a4681172db778b3c30, type: 3}
+  symbol: {fileID: 21300000, guid: 6cd7446fcbaa24945a7a14c06b9e5663, type: 3}
   material: {fileID: 2100000, guid: 0b02d7ee5d7ffb944975a65d7e9d2338, type: 2}
   name: Triangle
   description: +1 triangle limit
-  methodName: AddEnemyTypeAmount(Triangle, 1)
+  methodName: AddTriangleAmount(1)

@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c63d2c7f3070d3a48a3d7042029ff764, type: 3}
-  m_Name: Life2
+  m_Name: ClearTriangles
   m_EditorClassIdentifier: 
-  symbol: {fileID: 21300000, guid: f1915df4b00434244a93a2ad16a8628c, type: 3}
+  symbol: {fileID: 21300000, guid: 6cd7446fcbaa24945a7a14c06b9e5663, type: 3}
   material: {fileID: 2100000, guid: f802a2910a64ac14d95132d02b1081cb, type: 2}
-  name: Life
-  description: +2 heart
-  methodName: GiveHeart(2)
+  name: Clear triangles
+  description: Removes triangles
+  methodName: ClearEnemyType(Triangle)
