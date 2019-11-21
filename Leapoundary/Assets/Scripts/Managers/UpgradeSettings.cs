@@ -1,9 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 public class UpgradeSettings : MonoBehaviour
 {
+    public Volume volume;
+    public ColorAdjustments color;
+    public Vignette vignette;
+
+    private void Start()
+    {
+        volume = GameObject.Find("Post-process Volume").GetComponent<Volume>();
+        volume.profile.TryGet(out color);
+        volume.profile.TryGet(out vignette);
+    }
+
     #region Negative
     public void RemoveHeart(int amount)
     {
@@ -63,10 +76,41 @@ public class UpgradeSettings : MonoBehaviour
 
     #region Neutral
 
-    // Change hue
-    // Slow time
-    // Speed Time
-    // Postprocess effects
+    // Hue shift
+    public void HueShift()
+    {
+        if(!color.hueShift.overrideState)
+            color.hueShift.overrideState = true;
+        else
+            color.hueShift.overrideState = false;
+    }
+
+    // Saturation
+    public void Saturation()
+    {
+        if(!color.saturation.overrideState)
+            color.saturation.overrideState = true;
+        else
+            color.saturation.overrideState = false;
+    }
+
+    // Contrast
+    public void Contrast()
+    {
+        if(!color.contrast.overrideState)
+            color.contrast.overrideState = true;
+        else
+            color.contrast.overrideState = false;
+    }
+
+    // Colorful
+    public void Colorful()
+    {
+        if(!vignette.active)
+            vignette.active = true;
+        else
+            vignette.active = false;
+    }
 
     #endregion
 }

@@ -72,7 +72,7 @@ public class PlayerSettings : MonoBehaviour
     public void CheckLeaps()
     {
         leaps++;
-        if(leaps % 5 == 0)
+        if(leaps % 10 == 0)
         {
             //0 - positive, 1 - negative, 2 - neutral;
             cardType = Random.Range(0, 3);
