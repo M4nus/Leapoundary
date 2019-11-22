@@ -5,7 +5,7 @@ using UnityEngine;
 public class Hearts : MonoBehaviour
 {
     public int heartID;
-
+    
     private void Update()
     {
         CheckLives();

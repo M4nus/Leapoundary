@@ -28,8 +28,6 @@ public class CardDisplay : MonoBehaviour
 
     private void OnEnable()
     {
-
-        StartCoroutine(Dissolve());
         RandomizeCards();
 
         _myAction = () => { InvokeAction(card.methodName); };
@@ -38,6 +36,8 @@ public class CardDisplay : MonoBehaviour
         titleText.text = card.name;
         descriptionText.text = card.description;
         renderer.material = card.material;
+
+        StartCoroutine(Dissolve());
         button.onClick.AddListener(_myAction);
         button.onClick.AddListener(null);
     }
@@ -128,9 +128,12 @@ public class CardDisplay : MonoBehaviour
         while(alpha >= -1.1f)
         {
             renderer.material.SetFloat("Vector1_43A1A6D", alpha);
-            titleText.alpha = alpha + 0.6f;
-            descriptionText.alpha = alpha + 0.6f;
-            symbolImage.color = new Vector4(renderer.color.r, renderer.color.g, renderer.color.b, alpha + 0.6f);
+            if((alpha + 0.6f) > 0f)
+            {
+                titleText.alpha = alpha + 0.6f;
+                descriptionText.alpha = alpha + 0.6f;
+                symbolImage.color = new Vector4(renderer.color.r, renderer.color.g, renderer.color.b, alpha + 0.6f);
+            }
             alpha -= Time.deltaTime * 2;
             yield return null;
         }

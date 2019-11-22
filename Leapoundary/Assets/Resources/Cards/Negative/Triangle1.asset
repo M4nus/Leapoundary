@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   symbol: {fileID: 21300000, guid: 6cd7446fcbaa24945a7a14c06b9e5663, type: 3}
   material: {fileID: 2100000, guid: 18ca71018882ca7438f3e2c7cadf2ad5, type: 2}
-  name: Triangle
+  name: Limit
   description: +1 triangle limit
   methodName: AddTriangleAmount(1)

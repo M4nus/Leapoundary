@@ -8,4 +8,6 @@ public class ParticleContainer : MonoBehaviour
     public GameObject ballBreak;
     public GameObject spawnPlace;
     public GameObject enemyDeath;
+    public GameObject heartMelt;
+    public GameObject heartCharge;
 }
