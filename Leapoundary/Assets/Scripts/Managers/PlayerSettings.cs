@@ -16,6 +16,10 @@ public class PlayerSettings : MonoBehaviour
     public static PlayerSettings instance;
 
     public BallState ballState = BallState.Upgrade;
+    
+    public List<object> positiveCards = new List<object>();
+    public List<object> negativeCards = new List<object>();
+    public List<object> neutralCards = new List<object>();
 
     public GameObject ball;
     public GameObject currentTurret;
@@ -36,6 +40,7 @@ public class PlayerSettings : MonoBehaviour
     public bool upgradeTime = false;
     public bool canSpawnTriangle = true;
     public bool canSpawnStander = true;
+    public bool cardsDissolved = false;
 
 
     private void Awake()
@@ -44,6 +49,10 @@ public class PlayerSettings : MonoBehaviour
             instance = this;
         else
             Destroy(gameObject);
+        
+        positiveCards.AddRange(Resources.LoadAll("Cards/Positive"));
+        negativeCards.AddRange(Resources.LoadAll("Cards/Negative"));
+        neutralCards.AddRange(Resources.LoadAll("Cards/Neutral"));
     }
 
     private void Update()
@@ -61,8 +70,11 @@ public class PlayerSettings : MonoBehaviour
 
         if(ballState == BallState.Upgrade)
             cardsTab.SetActive(true);
-        else
+        else if(cardsDissolved)
+        {
             cardsTab.SetActive(false);
+            cardsDissolved = false;
+        }
 
         // Checking if we can spawn enemies
         canSpawnTriangle = (ballState == BallState.Upgrade || GameObject.FindGameObjectsWithTag("Triangle").Length >= triangleLimit) ? false : true;
@@ -90,7 +102,7 @@ public class PlayerSettings : MonoBehaviour
 
     public void HurtBall()
     {
-        if(lives > 0)
+        if(lives > 1)
             lives--;
         else
             ballState = BallState.Death;
@@ -123,4 +135,13 @@ public class PlayerSettings : MonoBehaviour
         obj.transform.right = direction;
     }
 
+    public void ResetCardList()
+    {
+        positiveCards.Clear();
+        negativeCards.Clear();
+        neutralCards.Clear();
+        positiveCards.AddRange(Resources.LoadAll("Cards/Positive"));
+        negativeCards.AddRange(Resources.LoadAll("Cards/Negative"));
+        neutralCards.AddRange(Resources.LoadAll("Cards/Neutral"));
+    }
 }

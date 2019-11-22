@@ -1,5 +1,7 @@
 ﻿using System.Reflection;
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
@@ -7,11 +9,7 @@ using TMPro;
 
 public class CardDisplay : MonoBehaviour
 {
-    public object[] positiveCards;
-    public object[] negativeCards;
-    public object[] neutralCards;
-
-    public int id;
+    
     public Card card;
     
     public Image symbolImage;
@@ -26,21 +24,13 @@ public class CardDisplay : MonoBehaviour
     private void Awake()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<PlayerSettings>();
-
-        positiveCards = Resources.LoadAll("Cards/Positive");
-        negativeCards = Resources.LoadAll("Cards/Negative");
-        neutralCards = Resources.LoadAll("Cards/Neutral");
     }
 
     private void OnEnable()
     {
-        Debug.Log("ID: " + id);
-        if(gameManager.cardType == 0) 
-            card = positiveCards[UnityEngine.Random.Range(0, positiveCards.Length)] as Card;
-        if(gameManager.cardType == 1)
-            card = negativeCards[UnityEngine.Random.Range(0, negativeCards.Length)] as Card;
-        if(gameManager.cardType == 2)
-            card = neutralCards[UnityEngine.Random.Range(0, neutralCards.Length)] as Card;
+
+        StartCoroutine(Dissolve());
+        RandomizeCards();
 
         _myAction = () => { InvokeAction(card.methodName); };
 
@@ -50,6 +40,11 @@ public class CardDisplay : MonoBehaviour
         renderer.material = card.material;
         button.onClick.AddListener(_myAction);
         button.onClick.AddListener(null);
+    }
+
+    private void OnDisable()
+    {
+        gameManager.ResetCardList();
     }
 
     private void InvokeAction(string action)
@@ -62,8 +57,8 @@ public class CardDisplay : MonoBehaviour
         object[] functionParameters = GetMethodParameters(action, method.GetParameters());
 
         method.Invoke(us, functionParameters);
-        Debug.Log("Button: " + button.transform.parent.parent);
         PlayerSettings.instance.upgradeTime = false;
+        StartCoroutine(Solve());
     }
 
     private string GetMethodName(string eventData)
@@ -89,6 +84,57 @@ public class CardDisplay : MonoBehaviour
         }
 
         return parameters;
+    }
+
+    public void RandomizeCards()
+    {
+        if(gameManager.cardType == 0)
+        {
+            int index = UnityEngine.Random.Range(0, gameManager.positiveCards.Count);
+            card = gameManager.positiveCards[index] as Card;
+            gameManager.positiveCards.Remove(gameManager.positiveCards[index]);
+        }
+        if(gameManager.cardType == 1)
+        {
+            int index = UnityEngine.Random.Range(0, gameManager.negativeCards.Count);
+            card = gameManager.negativeCards[index] as Card;
+            gameManager.negativeCards.Remove(gameManager.negativeCards[index]);
+        }
+        if(gameManager.cardType == 2)
+        {
+            int index = UnityEngine.Random.Range(0, gameManager.neutralCards.Count);
+            card = gameManager.neutralCards[index] as Card;
+            gameManager.neutralCards.Remove(gameManager.neutralCards[index]);
+        }
+    }
+
+    public IEnumerator Dissolve()
+    {
+        float alpha = renderer.material.GetFloat("Vector1_43A1A6D");
+        while(alpha <= 0.5f)
+        {
+            renderer.material.SetFloat("Vector1_43A1A6D", alpha);
+            titleText.alpha = alpha + 1.1f;
+            descriptionText.alpha = alpha + 1.1f;
+            symbolImage.color = new Vector4(renderer.color.r, renderer.color.g, renderer.color.b, alpha + 1.1f);
+            alpha += Time.deltaTime * 2;
+            yield return null;
+        }
+    }
+
+    public IEnumerator Solve()
+    {
+        float alpha = renderer.material.GetFloat("Vector1_43A1A6D");
+        while(alpha >= -1.1f)
+        {
+            renderer.material.SetFloat("Vector1_43A1A6D", alpha);
+            titleText.alpha = alpha + 0.6f;
+            descriptionText.alpha = alpha + 0.6f;
+            symbolImage.color = new Vector4(renderer.color.r, renderer.color.g, renderer.color.b, alpha + 0.6f);
+            alpha -= Time.deltaTime * 2;
+            yield return null;
+        }
+        PlayerSettings.instance.cardsDissolved = true;
     }
 }
 //Mati#6862 <--- Great guy

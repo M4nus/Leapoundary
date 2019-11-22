@@ -19,7 +19,7 @@ TagManager:
   - Turret
   - Enemies
   - BlockingCollider
-  - 
+  - SpawningObject
   - 
   - 
   - 

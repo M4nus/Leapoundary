@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Triangle3
   m_EditorClassIdentifier: 
   symbol: {fileID: 21300000, guid: f9c4aacdb7ef82e439cfafae7d2bc109, type: 3}
-  material: {fileID: 2100000, guid: 0b02d7ee5d7ffb944975a65d7e9d2338, type: 2}
+  material: {fileID: 2100000, guid: 18ca71018882ca7438f3e2c7cadf2ad5, type: 2}
   name: Triangle
   description: +3 triangle limit
   methodName: AddTriangleAmount(3)

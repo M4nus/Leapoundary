@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RemoveHeart 1
   m_EditorClassIdentifier: 
   symbol: {fileID: 21300000, guid: 600573090903ada47a55427a1e716ef5, type: 3}
-  material: {fileID: 2100000, guid: 0b02d7ee5d7ffb944975a65d7e9d2338, type: 2}
+  material: {fileID: 2100000, guid: 18ca71018882ca7438f3e2c7cadf2ad5, type: 2}
   name: Heart
   description: -1 heart
   methodName: RemoveHeart(1)

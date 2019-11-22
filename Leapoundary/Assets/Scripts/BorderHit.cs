@@ -4,19 +4,18 @@ using UnityEngine;
 
 public class BorderHit : MonoBehaviour
 {
-    ParticleSystem ps;
+    ParticleContainer pc;
 
     private void Awake()
     {
-        ps = GameObject.Find("BorderHitParticles").GetComponent<ParticleSystem>();
+        pc = GameObject.Find("GameManager").GetComponent<ParticleContainer>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.layer == LayerMask.NameToLayer("Ball"))
         {
-            ps.gameObject.transform.position = collision.transform.position;
-            ps.Emit(20);
+            Instantiate(pc.borderHit, collision.transform.position, Quaternion.identity);
         }
     }
 }

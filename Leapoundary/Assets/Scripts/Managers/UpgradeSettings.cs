@@ -6,12 +6,16 @@ using UnityEngine.Rendering.Universal;
 
 public class UpgradeSettings : MonoBehaviour
 {
+    public EnemySpawner spawner;
     public Volume volume;
     public ColorAdjustments color;
     public Vignette vignette;
+    public ParticleContainer pc;
 
     private void Start()
     {
+        pc = GetComponent<ParticleContainer>();
+        spawner = GetComponent<EnemySpawner>();
         volume = GameObject.Find("Post-process Volume").GetComponent<Volume>();
         volume.profile.TryGet(out color);
         volume.profile.TryGet(out vignette);
@@ -42,16 +46,40 @@ public class UpgradeSettings : MonoBehaviour
         PlayerSettings.instance.standerLimit += amount;
     }
 
+    public void SpawnTriangle(int amount)
+    {
+        for(int i=0; i<amount; i++)
+            spawner.SpawnTriangle();
+    }
+
+    public void SpawnStander(int amount)
+    {
+        for(int i = 0; i < amount; i++)
+            spawner.SpawnStander();
+    }
+
+    public void SpeedSpawnerStander()
+    {
+        if(PlayerSettings.instance.standerSpawnTime > 5)
+            PlayerSettings.instance.standerSpawnTime -= 1f;
+    }
+
+    public void SpeedSpawnerTriangle()
+    {
+        if(PlayerSettings.instance.triangleSpawnTime > 5)
+            PlayerSettings.instance.triangleSpawnTime -= 1f;
+    }
+
     #endregion
 
     #region Positive
     public void GiveHeart(int amount)
     {
         PlayerSettings.instance.lives += amount;
-        Debug.Log("GiveHeart: " + PlayerSettings.instance.lives);
 
         if(PlayerSettings.instance.lives > 5)
            PlayerSettings.instance.lives = 5;
+        
     }
 
     public void IncreaseBallSpeed(float amount)
@@ -67,9 +95,21 @@ public class UpgradeSettings : MonoBehaviour
         GameObject[] enemies = GameObject.FindGameObjectsWithTag(tag);
         foreach(GameObject enemy in enemies)
         {
-            Debug.Log("Enemies: " + enemy);
+            Instantiate(pc.enemyDeath, enemy.transform.position, Quaternion.identity);
             Destroy(enemy);
         }
+    }
+
+    public void SlowSpawnerStander()
+    {
+        if(PlayerSettings.instance.standerSpawnTime < 20)
+            PlayerSettings.instance.standerSpawnTime += 1f;
+    }
+
+    public void SlowSpawnerTriangle()
+    {
+        if(PlayerSettings.instance.triangleSpawnTime < 20)
+            PlayerSettings.instance.triangleSpawnTime += 1f;
     }
 
     #endregion

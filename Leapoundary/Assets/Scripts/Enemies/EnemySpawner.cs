@@ -8,10 +8,12 @@ public class EnemySpawner : MonoBehaviour
 
     public GameObject triangle;
     public GameObject stander;
+    private ParticleContainer pc;
 
     // Start is called before the first frame update
     void Start()
     {
+        pc = GetComponent<ParticleContainer>();
         StartCoroutine(SpawnTriangles());
         StartCoroutine(SpawnStanders());
     }
@@ -21,7 +23,12 @@ public class EnemySpawner : MonoBehaviour
         while(true)
         {
             if(PlayerSettings.instance.canSpawnTriangle)
-                Instantiate(triangle, SpawnPosition(), Quaternion.identity);
+            {
+                Vector3 currentSpawnPosition = SpawnPosition();
+                Instantiate(pc.spawnPlace, currentSpawnPosition, Quaternion.identity);
+                yield return new WaitForSeconds(2f);
+                Instantiate(triangle, currentSpawnPosition, Quaternion.identity);
+            }
             yield return new WaitForSeconds(PlayerSettings.instance.triangleSpawnTime);
         }
     }
@@ -31,9 +38,24 @@ public class EnemySpawner : MonoBehaviour
         while(true)
         {
             if(PlayerSettings.instance.canSpawnStander)
-                Instantiate(stander, SpawnPosition(), Quaternion.identity);
+            {
+                Vector3 currentSpawnPosition = SpawnPosition();
+                Instantiate(pc.spawnPlace, currentSpawnPosition, Quaternion.identity);
+                yield return new WaitForSeconds(2f);
+                Instantiate(stander, currentSpawnPosition, Quaternion.identity);
+            }
             yield return new WaitForSeconds(PlayerSettings.instance.standerSpawnTime);
         }
+    }
+
+    public void SpawnTriangle()
+    {
+        Instantiate(triangle, SpawnPosition(), Quaternion.identity);
+    }
+
+    public void SpawnStander()
+    {
+        Instantiate(stander, SpawnPosition(), Quaternion.identity);
     }
 
     private Vector3 SpawnPosition()
