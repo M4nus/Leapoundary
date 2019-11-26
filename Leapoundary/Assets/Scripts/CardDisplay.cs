@@ -38,6 +38,7 @@ public class CardDisplay : MonoBehaviour
         renderer.material = card.material;
 
         StartCoroutine(Dissolve());
+        button.interactable = true;
         button.onClick.AddListener(_myAction);
         button.onClick.AddListener(null);
     }
@@ -58,6 +59,7 @@ public class CardDisplay : MonoBehaviour
 
         method.Invoke(us, functionParameters);
         PlayerSettings.instance.upgradeTime = false;
+        button.interactable = false;
         StartCoroutine(Solve());
     }
 

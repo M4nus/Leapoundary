@@ -6,7 +6,7 @@ public class HeartParticles : MonoBehaviour
 {
     ParticleContainer pc;
 
-    void Start()
+    void Awake()
     {
         pc = GameObject.Find("GameManager").GetComponent<ParticleContainer>();
     }
