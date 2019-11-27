@@ -1,0 +1,139 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &91214402465166779
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 91214402465166661}
+  - component: {fileID: 91214402465166660}
+  - component: {fileID: 91214402465166662}
+  - component: {fileID: 91214402465166663}
+  - component: {fileID: 91214402465166656}
+  - component: {fileID: 91214402465166657}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &91214402465166661
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 91214402465166779}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.6804495, y: -0.2788174, z: -3.8356905}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &91214402465166660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 91214402465166779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4af1ffee6211e84782fdbb933edf5e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ballState: 0
+  ball: {fileID: 0}
+  currentTurret: {fileID: 0}
+  nextTurret: {fileID: 0}
+  cardsTab: {fileID: 0}
+  lives: 3
+  leaps: 0
+  triangleLimit: 5
+  standerLimit: 7
+  cardType: 0
+  ballSpeed: 500
+  triangleSpeed: 2
+  triangleRotate: 200
+  triangleSpawnTime: 15
+  standerSpawnTime: 10
+  upgradeTime: 0
+  canSpawnTriangle: 1
+  canSpawnStander: 1
+  cardsDissolved: 0
+--- !u!114 &91214402465166662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 91214402465166779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97aabfa3c3d12be4587b1d9ca8b4371e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triangle: {fileID: 5996384681887338466, guid: 13417be2d403f864ca82e1d7af4a4796,
+    type: 3}
+  stander: {fileID: 6688696350630559392, guid: 7a928e0b5e8e7ca48bc969c533fcf428, type: 3}
+--- !u!114 &91214402465166663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 91214402465166779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7303ad7385f7ffe4aa8db018ea6900df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawner: {fileID: 0}
+  volume: {fileID: 0}
+  color: {fileID: 0}
+  vignette: {fileID: 0}
+  pc: {fileID: 0}
+--- !u!114 &91214402465166656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 91214402465166779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f204943774f29f746b7a8608cfa39c16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 0}
+  panel: {fileID: 0}
+  deathIcons: {fileID: 0}
+--- !u!114 &91214402465166657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 91214402465166779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37e42bf04bd7374d9771fca54452748, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  borderHit: {fileID: 7540876127102378297, guid: b0ff9eb664f5b074bba90e5cfdad8810,
+    type: 3}
+  ballBreak: {fileID: 3858321351914581750, guid: a34a9a4985deb114381acda41e86c4ca,
+    type: 3}
+  spawnPlace: {fileID: 7705570026441421835, guid: 2b7c16d5fe8064649beb3a00c56bc393,
+    type: 3}
+  enemyDeath: {fileID: 7116691520058719819, guid: 3b7235f587e207a46bdb0f14eb77f28b,
+    type: 3}
+  heartMelt: {fileID: 8687230515027255679, guid: c566972c5bd99fb4981b3a1c89991688,
+    type: 3}
+  heartCharge: {fileID: 5431683769755295547, guid: 25768457eef3236488c104bf5a5dcf05,
+    type: 3}

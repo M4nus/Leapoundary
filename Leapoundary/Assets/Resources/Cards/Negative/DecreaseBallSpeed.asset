@@ -15,5 +15,5 @@ MonoBehaviour:
   symbol: {fileID: 21300000, guid: f3a291a6f79b4244b8a50dcfe5860ff5, type: 3}
   material: {fileID: 2100000, guid: 18ca71018882ca7438f3e2c7cadf2ad5, type: 2}
   name: Ball speed
-  description: -20% ball speed
-  methodName: DecreaseBallSpeed(100)
+  description: -15% ball speed
+  methodName: DecreaseBallSpeed(75)

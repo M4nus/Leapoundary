@@ -7,7 +7,8 @@ public enum BallState
     Safe,
     Launched,
     Upgrade,
-    Death
+    Death,
+    Options
 }
 
 public class PlayerSettings : MonoBehaviour
@@ -58,7 +59,7 @@ public class PlayerSettings : MonoBehaviour
     private void Update()
     {
         // Checking whether ball was launched or not
-        if(ballState != BallState.Death)
+        if(ballState != BallState.Death && ballState != BallState.Options)
         {
             if(ball.transform.parent == currentTurret.transform && !upgradeTime)
                 ballState = BallState.Safe;
@@ -102,9 +103,8 @@ public class PlayerSettings : MonoBehaviour
 
     public void HurtBall()
     {
-        if(lives > 1)
-            lives--;
-        else
+        lives--;
+        if(lives <= 0)
             ballState = BallState.Death;
     }
 

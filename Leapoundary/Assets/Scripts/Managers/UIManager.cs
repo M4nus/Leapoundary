@@ -11,6 +11,7 @@ public class UIManager : MonoBehaviour
     public Animator anim;
     public GameObject panel;
     public GameObject deathIcons;
+    public GameObject optionsIcons;
 
 
     // Start is called before the first frame update
@@ -28,6 +29,20 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    public void ToggleOptions()
+    {
+        if(!optionsIcons.active)
+        {
+            Time.timeScale = 0f;
+            optionsIcons.SetActive(true);
+        }
+        else
+        {
+            Time.timeScale = 1f;
+            optionsIcons.SetActive(false);
+        }
+    }
+
     public void FadeOut()
     {
         anim.SetBool("TurnWhite", false);
@@ -41,6 +56,7 @@ public class UIManager : MonoBehaviour
     public void Retry()
     {
         FadeOut();
+        Time.timeScale = 1f;
         PlayerSettings.instance.ballState = BallState.Safe;
         SceneManager.LoadScene("Base");
     }
@@ -48,6 +64,7 @@ public class UIManager : MonoBehaviour
     public void GoToMenu()
     {
         FadeOut();
+        Time.timeScale = 1f;
         PlayerSettings.instance.ballState = BallState.Safe;
         SceneManager.LoadScene("Menu");
     }
