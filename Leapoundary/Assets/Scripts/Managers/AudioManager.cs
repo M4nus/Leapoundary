@@ -22,12 +22,20 @@ public class AudioManager : MonoBehaviour
             s.source.volume = s.volume;
             s.source.pitch = s.pitch;
         }
+
+        Play("Void");
     }
 
     public void Play(string name)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
-        s.source.pitch = UnityEngine.Random.Range(0.8f, 1.4f);
+        s.source.Play();
+    }
+
+    public void PlayRandom(string name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        s.source.pitch = UnityEngine.Random.Range((s.source.pitch/1.5f), (s.source.pitch * 1.5f));
         s.source.Play();
     }
 }

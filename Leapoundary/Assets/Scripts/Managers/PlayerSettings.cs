@@ -54,6 +54,7 @@ public class PlayerSettings : MonoBehaviour
         positiveCards.AddRange(Resources.LoadAll("Cards/Positive"));
         negativeCards.AddRange(Resources.LoadAll("Cards/Negative"));
         neutralCards.AddRange(Resources.LoadAll("Cards/Neutral"));
+        //AudioManager.instance.Play("Void");
     }
 
     private void Update()

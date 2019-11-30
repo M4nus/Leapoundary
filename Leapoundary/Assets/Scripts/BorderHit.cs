@@ -21,6 +21,7 @@ public class BorderHit : MonoBehaviour
         {
             Instantiate(pc.borderHit, collision.transform.position, Quaternion.identity);
             anim.SetTrigger("Shine");
+            AudioManager.instance.PlayRandom("WallHit");
         }
     }
 

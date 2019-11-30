@@ -26,6 +26,7 @@ public class TurretShooting : MonoBehaviour
         ps.GetCrosshairDirection(gameObject);
         ps.ball.GetComponent<Rigidbody2D>().AddForce(ps.ballSpeed * transform.right * Time.fixedDeltaTime, ForceMode2D.Impulse);
         ps.ball.transform.parent = null;
+        AudioManager.instance.PlayRandom("TurretShoot");
     }
 
     private bool CanShoot()

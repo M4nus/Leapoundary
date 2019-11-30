@@ -5415,6 +5415,85 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1002549665
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1002549667}
+  - component: {fileID: 1002549666}
+  m_Layer: 0
+  m_Name: MusicManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1002549666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1002549665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6f603fa9fece3341bba4a3b99e04991, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Void
+    clip: {fileID: 8300000, guid: 696be201ac36d7d4191ab6965a917c27, type: 3}
+    volume: 0.7
+    pitch: 0.7
+    source: {fileID: 0}
+  - name: BallReturn
+    clip: {fileID: 8300000, guid: 1031d137c132e6446876b1f0e01c1970, type: 3}
+    volume: 0.4
+    pitch: 0.7
+    source: {fileID: 0}
+  - name: CardAppear
+    clip: {fileID: 8300000, guid: c03e9b6bf4184714faa140a35a8633ab, type: 3}
+    volume: 0.8
+    pitch: 0.7
+    source: {fileID: 0}
+  - name: EnemyHit
+    clip: {fileID: 8300000, guid: 02b8715ddfbacce43933db05b94de258, type: 3}
+    volume: 0.4
+    pitch: 0.7
+    source: {fileID: 0}
+  - name: OptionsHover
+    clip: {fileID: 8300000, guid: 77c759ff3f338a64dbae00ce685410b7, type: 3}
+    volume: 0.4
+    pitch: 0.7
+    source: {fileID: 0}
+  - name: TurretShoot
+    clip: {fileID: 8300000, guid: 6124a5a758b0e904b8648c0c1e26e16d, type: 3}
+    volume: 0.2
+    pitch: 0.7
+    source: {fileID: 0}
+  - name: WallHit
+    clip: {fileID: 8300000, guid: 752fbc225f0200e4484987613ec2d1ec, type: 3}
+    volume: 0.2
+    pitch: 0.7
+    source: {fileID: 0}
+--- !u!4 &1002549667
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1002549665}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.9265065, y: 3.5738165, z: -0.48189297}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1007510056
 GameObject:
   m_ObjectHideFlags: 0

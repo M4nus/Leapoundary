@@ -18,6 +18,8 @@ public class Ball : MonoBehaviour
             Instantiate(pc.ballBreak, collision.transform.position, Quaternion.identity);
             Instantiate(pc.enemyDeath, collision.gameObject.transform.position, Quaternion.identity);
             Destroy(collision.gameObject);
+            AudioManager.instance.PlayRandom("EnemyHit");
+            AudioManager.instance.PlayRandom("BallReturn");
         }
     }
 }

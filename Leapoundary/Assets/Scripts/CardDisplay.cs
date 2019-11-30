@@ -17,6 +17,7 @@ public class CardDisplay : MonoBehaviour
     public TextMeshProUGUI titleText;
     public TextMeshProUGUI descriptionText;
     public new Image renderer;
+    public Animator anim;
 
     private UnityAction _myAction;
     private PlayerSettings gameManager;
@@ -24,12 +25,12 @@ public class CardDisplay : MonoBehaviour
     private void Awake()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<PlayerSettings>();
+        anim = GetComponent<Animator>();
     }
 
     private void OnEnable()
     {
         RandomizeCards();
-
         _myAction = () => { InvokeAction(card.methodName); };
 
         symbolImage.sprite = card.symbol;
@@ -112,6 +113,10 @@ public class CardDisplay : MonoBehaviour
 
     public IEnumerator Dissolve()
     {
+        AudioManager.instance.PlayRandom("CardAppear");
+        titleText.gameObject.SetActive(true);
+        descriptionText.gameObject.SetActive(true);
+        symbolImage.gameObject.SetActive(true);
         float alpha = renderer.material.GetFloat("Vector1_43A1A6D");
         while(alpha <= 0.5f)
         {
@@ -126,15 +131,18 @@ public class CardDisplay : MonoBehaviour
 
     public IEnumerator Solve()
     {
+        titleText.gameObject.SetActive(false);
+        descriptionText.gameObject.SetActive(false);
+        symbolImage.gameObject.SetActive(false);
         float alpha = renderer.material.GetFloat("Vector1_43A1A6D");
         while(alpha >= -1.1f)
         {
             renderer.material.SetFloat("Vector1_43A1A6D", alpha);
             if((alpha + 0.6f) > 0f)
             {
-                titleText.alpha = alpha + 0.6f;
-                descriptionText.alpha = alpha + 0.6f;
-                symbolImage.color = new Vector4(renderer.color.r, renderer.color.g, renderer.color.b, alpha + 0.6f);
+                //titleText.alpha = alpha + 0.6f;
+                //descriptionText.alpha = alpha + 0.6f;
+                //symbolImage.color = new Vector4(renderer.color.r, renderer.color.g, renderer.color.b, alpha + 0.6f);
             }
             alpha -= Time.deltaTime * 2;
             yield return null;
