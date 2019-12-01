@@ -131,6 +131,7 @@ public class CardDisplay : MonoBehaviour
 
     public IEnumerator Solve()
     {
+        AudioManager.instance.PlayRandom("CardAppear");
         titleText.gameObject.SetActive(false);
         descriptionText.gameObject.SetActive(false);
         symbolImage.gameObject.SetActive(false);
@@ -151,3 +152,10 @@ public class CardDisplay : MonoBehaviour
     }
 }
 //Mati#6862 <--- Great guy
+
+
+
+
+
+
+    

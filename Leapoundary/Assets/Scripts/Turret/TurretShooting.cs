@@ -23,10 +23,13 @@ public class TurretShooting : MonoBehaviour
 
     private void ShootBall()
     {
-        ps.GetCrosshairDirection(gameObject);
-        ps.ball.GetComponent<Rigidbody2D>().AddForce(ps.ballSpeed * transform.right * Time.fixedDeltaTime, ForceMode2D.Impulse);
-        ps.ball.transform.parent = null;
-        AudioManager.instance.PlayRandom("TurretShoot");
+        if(!UIManager.IsPointerOverUIElement())
+        {
+            ps.GetCrosshairDirection(gameObject);
+            ps.ball.GetComponent<Rigidbody2D>().AddForce(ps.ballSpeed * transform.right * Time.fixedDeltaTime, ForceMode2D.Impulse);
+            ps.ball.transform.parent = null;
+            AudioManager.instance.PlayRandom("TurretShoot");
+        }
     }
 
     private bool CanShoot()
@@ -35,5 +38,10 @@ public class TurretShooting : MonoBehaviour
             return true;
         else
             return false;
-    }    
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        PlayerSettings.instance.ResetBall();
+    }
 }
