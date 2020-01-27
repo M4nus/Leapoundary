@@ -15,7 +15,11 @@ public class TurretShooting : MonoBehaviour
     
     void Update()
     {
-        if(CanShoot() && Input.GetKeyDown(KeyCode.Mouse0))
+        if(Input.GetKey(KeyCode.Mouse0))
+        {
+            // Make a pointer that shows direction
+        }
+        if(CanShoot() && Input.GetKeyUp(KeyCode.Mouse0))
         {
             ShootBall();
         }

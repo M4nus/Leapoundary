@@ -15318,6 +15318,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Background particles
       objectReference: {fileID: 0}
+    - target: {fileID: 1308189478922247025, guid: 2ce1680a2da4f744091a3a6e7095ca55,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1308189478922246988, guid: 2ce1680a2da4f744091a3a6e7095ca55,
         type: 3}
       propertyPath: m_LocalPosition.x
