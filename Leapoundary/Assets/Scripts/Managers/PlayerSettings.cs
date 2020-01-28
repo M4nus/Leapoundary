@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 public enum BallState
 {
@@ -42,6 +44,7 @@ public class PlayerSettings : MonoBehaviour
     public bool canSpawnTriangle = true;
     public bool canSpawnStander = true;
     public bool cardsDissolved = false;
+    public bool isBounced = false;
 
 
     private void Awake()
@@ -91,6 +94,10 @@ public class PlayerSettings : MonoBehaviour
             //0 - positive, 1 - negative, 2 - neutral;
             cardType = Random.Range(0, 3);
             upgradeTime = true;
+        }
+        if(leaps % 25 == 0)
+        {
+            gameObject.GetComponent<UpgradeSettings>().HueIncrement();
         }
     }
 

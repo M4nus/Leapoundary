@@ -13,6 +13,7 @@ public class Ball : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        PlayerSettings.instance.isBounced = true;
         if(collision.gameObject.layer == LayerMask.NameToLayer("Enemies"))
         {
             Instantiate(pc.ballBreak, collision.transform.position, Quaternion.identity);
@@ -20,6 +21,7 @@ public class Ball : MonoBehaviour
             Destroy(collision.gameObject);
             AudioManager.instance.PlayRandom("EnemyHit");
             AudioManager.instance.PlayRandom("BallReturn");
+            PlayerSettings.instance.isBounced = false;
         }
     }
 }

@@ -30,6 +30,11 @@ public class CardDisplay : MonoBehaviour
 
     private void OnEnable()
     {
+
+        // Cleaning listeners to not multiply effect
+        button.onClick.RemoveAllListeners();
+
+        // Assigning cards
         RandomizeCards();
         _myAction = () => { InvokeAction(card.methodName); };
 
@@ -38,10 +43,10 @@ public class CardDisplay : MonoBehaviour
         descriptionText.text = card.description;
         renderer.material = card.material;
 
+        // Add behaviour to card
         StartCoroutine(Dissolve());
         button.interactable = true;
         button.onClick.AddListener(_myAction);
-        button.onClick.AddListener(null);
     }
 
     private void OnDisable()

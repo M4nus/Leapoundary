@@ -11,6 +11,7 @@ public class UpgradeSettings : MonoBehaviour
     public ColorAdjustments color;
     public Vignette vignette;
     public ParticleContainer pc;
+    public ColorCurves curves;
 
     private void Start()
     {
@@ -19,6 +20,7 @@ public class UpgradeSettings : MonoBehaviour
         volume = GameObject.Find("Post-process Volume").GetComponent<Volume>();
         volume.profile.TryGet(out color);
         volume.profile.TryGet(out vignette);
+        volume.profile.TryGet(out curves);
     }
 
     #region Negative
@@ -116,13 +118,18 @@ public class UpgradeSettings : MonoBehaviour
 
     #region Neutral
 
+    public void HueIncrement()
+    {
+        color.hueShift.value += 30;
+    }
+
     // Hue shift
     public void HueShift()
     {
-        if(!color.hueShift.overrideState)
-            color.hueShift.overrideState = true;
+        if(!curves.active)
+            curves.active = true;
         else
-            color.hueShift.overrideState = false;
+            curves.active = false;
     }
 
     // Saturation

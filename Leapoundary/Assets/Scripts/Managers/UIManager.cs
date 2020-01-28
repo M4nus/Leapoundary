@@ -61,7 +61,7 @@ public class UIManager : MonoBehaviour
         FadeOut();
         Time.timeScale = 1f;
         PlayerSettings.instance.ballState = BallState.Safe;
-        SceneManager.LoadScene("Base");
+        SceneManager.LoadScene("BaseMobile");
     }
 
     public void GoToMenu()

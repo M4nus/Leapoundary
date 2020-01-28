@@ -46,6 +46,10 @@ public class TurretShooting : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        PlayerSettings.instance.ResetBall();
+        if(ps.isBounced)
+        {
+            PlayerSettings.instance.ResetBall();
+            ps.isBounced = false;
+        }
     }
 }
