@@ -9019,6 +9019,7 @@ GameObject:
   - component: {fileID: 1687258584}
   - component: {fileID: 1687258582}
   - component: {fileID: 1687258586}
+  - component: {fileID: 1687258583}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -9034,6 +9035,20 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1687258581}
   m_Enabled: 1
+--- !u!114 &1687258583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687258581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d9b343b50792e64b8ba847edabb040e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orthographicSize: 5.2
+  aspect: 1.6666
 --- !u!20 &1687258584
 Camera:
   m_ObjectHideFlags: 0
@@ -15321,7 +15336,7 @@ PrefabInstance:
     - target: {fileID: 1308189478922247025, guid: 2ce1680a2da4f744091a3a6e7095ca55,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1308189478922246988, guid: 2ce1680a2da4f744091a3a6e7095ca55,
         type: 3}
@@ -15391,6 +15406,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CursorParticles
+      objectReference: {fileID: 0}
+    - target: {fileID: 7545133700600674122, guid: ea0eda1435d01db4bac31309970f07ad,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7545133700600674119, guid: ea0eda1435d01db4bac31309970f07ad,
         type: 3}
