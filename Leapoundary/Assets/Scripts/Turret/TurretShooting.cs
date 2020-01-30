@@ -8,20 +8,36 @@ public class TurretShooting : MonoBehaviour
     public PlayerSettings ps;
     public GameObject gameManager;
 
+    [SerializeField]
+    private LineRenderer line;
+    [SerializeField]
+    private Transform pointer;
+
     void Start()
     {
-        ps = gameManager.GetComponent<PlayerSettings>(); 
+        ps = gameManager.GetComponent<PlayerSettings>();
+        line.GetComponent<LineRenderer>();
     }
     
     void Update()
     {
         if(Input.GetKey(KeyCode.Mouse0))
         {
-            // Make a pointer that shows direction
+            Laser();
         }
         if(CanShoot() && Input.GetKeyUp(KeyCode.Mouse0))
         {
+            line.enabled = false;
             ShootBall();
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(ps.isBounced)
+        {
+            PlayerSettings.instance.ResetBall();
+            ps.isBounced = false;
         }
     }
 
@@ -44,12 +60,34 @@ public class TurretShooting : MonoBehaviour
             return false;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    void Laser()
     {
-        if(ps.isBounced)
+        Vector2 dir = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 direction = (dir - (Vector2)transform.position).normalized;
+        RaycastHit2D hit;
+        hit = Physics2D.Raycast(pointer.position, direction, 40f);
+
+
+        if(Physics2D.Raycast((Vector2)pointer.position, direction, 40f));
         {
-            PlayerSettings.instance.ResetBall();
-            ps.isBounced = false;
+            line.enabled = true;
+            line.positionCount = 2;
+            line.SetPosition(0, (Vector2)pointer.position);
+            line.SetPosition(1, hit.point);
+            if(ps.isReflected)
+            {
+                line.positionCount = 3;
+                if(hit.collider.tag == "Mirrors")
+                {
+                    Vector2 pos = Vector2.Reflect((hit.point - (Vector2)pointer.position), hit.normal);
+                    RaycastHit2D reflection = Physics2D.Raycast(hit.point + hit.normal, pos);
+                    line.SetPosition(2, reflection.point);
+                }
+                else
+                {
+                    line.SetPosition(2, hit.point);
+                }
+            }
         }
     }
 }

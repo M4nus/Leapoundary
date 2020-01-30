@@ -19,7 +19,13 @@ public class BorderHit : MonoBehaviour
     {
         if(collision.gameObject.layer == LayerMask.NameToLayer("Ball"))
         {
-            Instantiate(pc.borderHit, collision.transform.position, Quaternion.identity);
+            GameObject hitParticles = ObjectPooler.sharedInstance.GetPooledObject("BorderHit");
+            if(hitParticles != null)
+            {
+                hitParticles.transform.position = collision.transform.position;
+                hitParticles.SetActive(true);
+            }
+
             anim.SetTrigger("Shine");
             AudioManager.instance.PlayRandom("WallHit");
         }

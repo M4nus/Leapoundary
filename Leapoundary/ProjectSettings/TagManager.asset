@@ -6,6 +6,11 @@ TagManager:
   tags:
   - Stander
   - Triangle
+  - Mirrors
+  - BallBreak
+  - BorderHit
+  - SpawnPlace
+  - EnemyDeath
   layers:
   - Default
   - TransparentFX
@@ -20,7 +25,7 @@ TagManager:
   - Enemies
   - BlockingCollider
   - SpawningObject
-  - 
+  - Wall
   - 
   - 
   - 

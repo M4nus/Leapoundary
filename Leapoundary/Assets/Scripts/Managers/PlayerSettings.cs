@@ -45,6 +45,7 @@ public class PlayerSettings : MonoBehaviour
     public bool canSpawnStander = true;
     public bool cardsDissolved = false;
     public bool isBounced = false;
+    public bool isReflected = false;
 
 
     private void Awake()

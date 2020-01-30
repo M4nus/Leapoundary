@@ -98,7 +98,7 @@ public class UpgradeSettings : MonoBehaviour
         foreach(GameObject enemy in enemies)
         {
             Instantiate(pc.enemyDeath, enemy.transform.position, Quaternion.identity);
-            Destroy(enemy);
+            enemy.SetActive(false);
         }
     }
 

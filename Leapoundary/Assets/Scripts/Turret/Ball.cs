@@ -16,9 +16,20 @@ public class Ball : MonoBehaviour
         PlayerSettings.instance.isBounced = true;
         if(collision.gameObject.layer == LayerMask.NameToLayer("Enemies"))
         {
-            Instantiate(pc.ballBreak, collision.transform.position, Quaternion.identity);
-            Instantiate(pc.enemyDeath, collision.gameObject.transform.position, Quaternion.identity);
-            Destroy(collision.gameObject);
+            GameObject ballParticles = ObjectPooler.sharedInstance.GetPooledObject("BallBreak");
+            if(ballParticles != null)
+            {
+                ballParticles.transform.position = collision.transform.position;
+                ballParticles.SetActive(true);
+            }
+
+            GameObject enemyParticles = ObjectPooler.sharedInstance.GetPooledObject("EnemyDeath");
+            if(ballParticles != null)
+            {
+                enemyParticles.transform.position = collision.gameObject.transform.position;
+                enemyParticles.SetActive(true);
+            }
+            collision.gameObject.SetActive(false);
             AudioManager.instance.PlayRandom("EnemyHit");
             AudioManager.instance.PlayRandom("BallReturn");
             PlayerSettings.instance.isBounced = false;

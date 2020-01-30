@@ -25,9 +25,26 @@ public class EnemySpawner : MonoBehaviour
             if(PlayerSettings.instance.canSpawnTriangle)
             {
                 Vector3 currentSpawnPosition = SpawnPosition();
-                Instantiate(pc.spawnPlace, currentSpawnPosition, Quaternion.identity);
+
+                // Spawning particles
+
+                GameObject spawnParticles = ObjectPooler.sharedInstance.GetPooledObject("SpawnPlace");
+                if(spawnParticles != null)
+                {
+                    spawnParticles.transform.position = currentSpawnPosition;
+                    spawnParticles.SetActive(true);
+                }
+
                 yield return new WaitForSeconds(2f);
-                Instantiate(triangle, currentSpawnPosition, Quaternion.identity);
+
+                // Spawning standers
+
+                triangle = ObjectPooler.sharedInstance.GetPooledObject("Triangle");
+                if(triangle != null)
+                {
+                    triangle.transform.position = currentSpawnPosition;
+                    triangle.SetActive(true);
+                }
             }
             yield return new WaitForSeconds(PlayerSettings.instance.triangleSpawnTime);
         }
@@ -40,9 +57,26 @@ public class EnemySpawner : MonoBehaviour
             if(PlayerSettings.instance.canSpawnStander)
             {
                 Vector3 currentSpawnPosition = SpawnPosition();
-                Instantiate(pc.spawnPlace, currentSpawnPosition, Quaternion.identity);
+
+                // Spawning particles
+
+                GameObject spawnParticles = ObjectPooler.sharedInstance.GetPooledObject("SpawnPlace");
+                if(spawnParticles != null)
+                {
+                    spawnParticles.transform.position = currentSpawnPosition;
+                    spawnParticles.SetActive(true);
+                }
+
                 yield return new WaitForSeconds(2f);
-                Instantiate(stander, currentSpawnPosition, Quaternion.identity);
+                
+                // Spawning standers
+
+                stander = ObjectPooler.sharedInstance.GetPooledObject("Stander"); 
+                if(stander != null)
+                {
+                    stander.transform.position = currentSpawnPosition;
+                    stander.SetActive(true);
+                }
             }
             yield return new WaitForSeconds(PlayerSettings.instance.standerSpawnTime);
         }
@@ -50,12 +84,22 @@ public class EnemySpawner : MonoBehaviour
 
     public void SpawnTriangle()
     {
-        Instantiate(triangle, SpawnPosition(), Quaternion.identity);
+        triangle = ObjectPooler.sharedInstance.GetPooledObject("Triangle");
+        if(triangle != null)
+        {
+            triangle.transform.position = SpawnPosition();
+            triangle.SetActive(true);
+        }
     }
 
     public void SpawnStander()
     {
-        Instantiate(stander, SpawnPosition(), Quaternion.identity);
+        stander = ObjectPooler.sharedInstance.GetPooledObject("Triangle");
+        if(stander != null)
+        {
+            stander.transform.position = SpawnPosition();
+            stander.SetActive(true);
+        }
     }
 
     private Vector3 SpawnPosition()

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 91214402465166661}
   - component: {fileID: 91214402465166660}
+  - component: {fileID: 771454830183136569}
   - component: {fileID: 91214402465166662}
   - component: {fileID: 91214402465166663}
   - component: {fileID: 91214402465166656}
@@ -66,6 +67,22 @@ MonoBehaviour:
   canSpawnTriangle: 1
   canSpawnStander: 1
   cardsDissolved: 0
+  isBounced: 0
+  isReflected: 0
+--- !u!114 &771454830183136569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 91214402465166779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe7ac937af36b1b44a5f539b18e8c263, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledObjects: []
+  itemsToPool: []
 --- !u!114 &91214402465166662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98,6 +115,7 @@ MonoBehaviour:
   color: {fileID: 0}
   vignette: {fileID: 0}
   pc: {fileID: 0}
+  curves: {fileID: 0}
 --- !u!114 &91214402465166656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,6 +131,7 @@ MonoBehaviour:
   anim: {fileID: 0}
   panel: {fileID: 0}
   deathIcons: {fileID: 0}
+  optionsIcons: {fileID: 0}
 --- !u!114 &91214402465166657
 MonoBehaviour:
   m_ObjectHideFlags: 0
