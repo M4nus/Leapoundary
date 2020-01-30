@@ -15306,6 +15306,11 @@ PrefabInstance:
       propertyPath: optionsIcons
       value: 
       objectReference: {fileID: 518418146}
+    - target: {fileID: 91214402465166656, guid: b76174a7e6669704eab6baab98c4b127,
+        type: 3}
+      propertyPath: squareAnim
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 91214402465166661, guid: b76174a7e6669704eab6baab98c4b127,
         type: 3}
       propertyPath: m_LocalPosition.x

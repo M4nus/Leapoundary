@@ -93,7 +93,15 @@ public class PlayerSettings : MonoBehaviour
         if(leaps % 10 == 0)
         {
             //0 - positive, 1 - negative, 2 - neutral;
-            cardType = Random.Range(0, 3);
+            float percentage = Random.value;
+            Debug.Log(percentage);
+            if(percentage < 0.5f)
+                cardType = 0;
+            else if(percentage < 0.8f)
+                cardType = 1;
+            else if(percentage < 1f)
+                cardType = 2;
+
             upgradeTime = true;
         }
         if(leaps % 25 == 0)
