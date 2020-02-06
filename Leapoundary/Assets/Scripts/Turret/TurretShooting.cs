@@ -21,7 +21,7 @@ public class TurretShooting : MonoBehaviour
     
     void Update()
     {
-        if(Input.GetKey(KeyCode.Mouse0))
+        if(CanShoot() && Input.GetKey(KeyCode.Mouse0))
         {
             Laser();
         }
@@ -34,10 +34,9 @@ public class TurretShooting : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(ps.isBounced)
+        if(collision.gameObject.layer == LayerMask.NameToLayer("Ball"))
         {
             PlayerSettings.instance.ResetBall();
-            ps.isBounced = false;
         }
     }
 

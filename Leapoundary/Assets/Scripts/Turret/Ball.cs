@@ -13,7 +13,6 @@ public class Ball : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        PlayerSettings.instance.isBounced = true;
         if(collision.gameObject.layer == LayerMask.NameToLayer("Enemies"))
         {
             GameObject ballParticles = ObjectPooler.sharedInstance.GetPooledObject("BallBreak");
@@ -32,7 +31,6 @@ public class Ball : MonoBehaviour
             collision.gameObject.SetActive(false);
             AudioManager.instance.PlayRandom("EnemyHit");
             AudioManager.instance.PlayRandom("BallReturn");
-            PlayerSettings.instance.isBounced = false;
         }
     }
 }

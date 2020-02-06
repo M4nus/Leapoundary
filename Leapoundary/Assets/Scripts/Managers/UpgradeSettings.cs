@@ -159,5 +159,13 @@ public class UpgradeSettings : MonoBehaviour
             vignette.active = false;
     }
 
+
+    public void ToggleReflection()
+    {
+        if(!PlayerSettings.instance.isReflected)
+            PlayerSettings.instance.isReflected = true;
+        else
+            PlayerSettings.instance.isReflected = false;
+    }
     #endregion
 }

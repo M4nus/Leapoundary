@@ -94,7 +94,6 @@ public class PlayerSettings : MonoBehaviour
         {
             //0 - positive, 1 - negative, 2 - neutral;
             float percentage = Random.value;
-            Debug.Log(percentage);
             if(percentage < 0.5f)
                 cardType = 0;
             else if(percentage < 0.8f)
