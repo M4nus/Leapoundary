@@ -8,6 +8,7 @@ public class EnemySpawner : MonoBehaviour
 
     public GameObject triangle;
     public GameObject stander;
+    public GameObject wall;
     private ParticleContainer pc;
 
     // Start is called before the first frame update
@@ -99,6 +100,16 @@ public class EnemySpawner : MonoBehaviour
         {
             stander.transform.position = SpawnPosition();
             stander.SetActive(true);
+        }
+    }
+
+    public void SpawnWall()
+    {
+        wall = ObjectPooler.sharedInstance.GetPooledObject("Wall");
+        if(wall != null)
+        {
+            wall.transform.position = SpawnPosition();
+            wall.SetActive(true);
         }
     }
 

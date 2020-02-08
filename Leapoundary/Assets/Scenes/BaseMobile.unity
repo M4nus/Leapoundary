@@ -15587,7 +15587,7 @@ PrefabInstance:
     - target: {fileID: 771454830183136569, guid: b76174a7e6669704eab6baab98c4b127,
         type: 3}
       propertyPath: itemsToPool.Array.size
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 771454830183136569, guid: b76174a7e6669704eab6baab98c4b127,
         type: 3}
@@ -15688,19 +15688,25 @@ PrefabInstance:
     - target: {fileID: 771454830183136569, guid: b76174a7e6669704eab6baab98c4b127,
         type: 3}
       propertyPath: itemsToPool.Array.data[6].amountToPool
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 771454830183136569, guid: b76174a7e6669704eab6baab98c4b127,
         type: 3}
       propertyPath: itemsToPool.Array.data[6].objectToPool
       value: 
-      objectReference: {fileID: 7116691520058719819, guid: 3b7235f587e207a46bdb0f14eb77f28b,
+      objectReference: {fileID: 6504176914647420290, guid: 41a268d98151cb34298e696a94dc75d4,
         type: 3}
     - target: {fileID: 771454830183136569, guid: b76174a7e6669704eab6baab98c4b127,
         type: 3}
       propertyPath: itemsToPool.Array.data[6].shouldExpand
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 91214402465166662, guid: b76174a7e6669704eab6baab98c4b127,
+        type: 3}
+      propertyPath: wall
+      value: 
+      objectReference: {fileID: 6504176914647420290, guid: 41a268d98151cb34298e696a94dc75d4,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b76174a7e6669704eab6baab98c4b127, type: 3}
 --- !u!1001 &814914804673719394
