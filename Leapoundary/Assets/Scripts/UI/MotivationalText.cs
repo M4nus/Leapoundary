@@ -12,6 +12,7 @@ public class MotivationalText : MonoBehaviour
 
     void OnEnable()
     {
+        Debug.Log(PlayerPrefs.GetInt("HighScore", 0));
         text = GetComponent<TextMeshProUGUI>();
         if(PlayerSettings.instance.leaps > PlayerPrefs.GetInt("HighScore", 0))
             text.text = gratulations[Random.Range(0, gratulations.Count)];

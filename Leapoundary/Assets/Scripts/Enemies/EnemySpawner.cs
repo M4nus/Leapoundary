@@ -103,12 +103,18 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
-    public void SpawnWall()
+    public IEnumerator SpawnWall()
     {
+        Vector3 currentSpawnPosition = SpawnPosition();
+        
+        Instantiate(pc.innerWall, currentSpawnPosition, Quaternion.identity);
+
+        yield return new WaitForSeconds(1f);
+
         wall = ObjectPooler.sharedInstance.GetPooledObject("Wall");
         if(wall != null)
         {
-            wall.transform.position = SpawnPosition();
+            wall.transform.position = currentSpawnPosition;
             wall.SetActive(true);
         }
     }

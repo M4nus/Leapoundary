@@ -2906,7 +2906,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 3170893824
+    rgba: 4278190080
   m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -15161,7 +15161,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 3170893824
+    rgba: 4278190080
   m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -15579,6 +15579,11 @@ PrefabInstance:
       propertyPath: cardsTab
       value: 
       objectReference: {fileID: 1312096097}
+    - target: {fileID: 91214402465166660, guid: b76174a7e6669704eab6baab98c4b127,
+        type: 3}
+      propertyPath: leaps
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 771454830183136569, guid: b76174a7e6669704eab6baab98c4b127,
         type: 3}
       propertyPath: pooledObjects.Array.size
@@ -15706,6 +15711,12 @@ PrefabInstance:
       propertyPath: wall
       value: 
       objectReference: {fileID: 6504176914647420290, guid: 41a268d98151cb34298e696a94dc75d4,
+        type: 3}
+    - target: {fileID: 91214402465166657, guid: b76174a7e6669704eab6baab98c4b127,
+        type: 3}
+      propertyPath: innerWall
+      value: 
+      objectReference: {fileID: 2989964341520006765, guid: ec8bc4f38b80e6a439822b7e6e0a6cc4,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b76174a7e6669704eab6baab98c4b127, type: 3}

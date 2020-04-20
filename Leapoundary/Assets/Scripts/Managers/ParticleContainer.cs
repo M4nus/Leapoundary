@@ -10,4 +10,5 @@ public class ParticleContainer : MonoBehaviour
     public GameObject enemyDeath;
     public GameObject heartMelt;
     public GameObject heartCharge;
+    public GameObject innerWall;
 }

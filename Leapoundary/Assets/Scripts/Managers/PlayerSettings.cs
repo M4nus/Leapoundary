@@ -103,10 +103,9 @@ public class PlayerSettings : MonoBehaviour
 
             upgradeTime = true;
         }
-        if(leaps % 25 == 0 && leaps <= 180)
+        if(leaps <= 180)
         {
-            gameObject.GetComponent<UpgradeSettings>().HueIncrement();
-            gameObject.GetComponent<EnemySpawner>().SpawnWall();
+            gameObject.GetComponent<UpgradeSettings>().HueIncrement(1);
         }
     }
 

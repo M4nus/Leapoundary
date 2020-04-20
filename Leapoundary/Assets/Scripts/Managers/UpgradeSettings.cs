@@ -118,9 +118,9 @@ public class UpgradeSettings : MonoBehaviour
 
     #region Neutral
 
-    public void HueIncrement()
+    public void HueIncrement(int value)
     {
-        color.hueShift.value += 30;
+        color.hueShift.value += value;
     }
 
     // Hue shift
