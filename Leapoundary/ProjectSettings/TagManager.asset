@@ -12,6 +12,7 @@ TagManager:
   - SpawnPlace
   - EnemyDeath
   - Wall
+  - Shuriken
   layers:
   - Default
   - TransparentFX

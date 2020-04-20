@@ -8,6 +8,7 @@ public class EnemySpawner : MonoBehaviour
 
     public GameObject triangle;
     public GameObject stander;
+    public GameObject shuriken;
     public GameObject wall;
     private ParticleContainer pc;
 
@@ -17,6 +18,7 @@ public class EnemySpawner : MonoBehaviour
         pc = GetComponent<ParticleContainer>();
         StartCoroutine(SpawnTriangles());
         StartCoroutine(SpawnStanders());
+        StartCoroutine(SpawnShurikens());
     }
 
     public IEnumerator SpawnTriangles()
@@ -83,6 +85,38 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
+    public IEnumerator SpawnShurikens()
+    {
+        while(true)
+        {
+            if(PlayerSettings.instance.canSpawnShuriken)
+            {
+                Vector3 currentSpawnPosition = SpawnPosition();
+
+                // Spawning particles
+
+                GameObject spawnParticles = ObjectPooler.sharedInstance.GetPooledObject("SpawnPlace");
+                if(spawnParticles != null)
+                {
+                    spawnParticles.transform.position = currentSpawnPosition;
+                    spawnParticles.SetActive(true);
+                }
+
+                yield return new WaitForSeconds(2f);
+
+                // Spawning shurikens
+
+                shuriken = ObjectPooler.sharedInstance.GetPooledObject("Shuriken");
+                if(shuriken != null)
+                {
+                    shuriken.transform.position = currentSpawnPosition;
+                    shuriken.SetActive(true);
+                }
+            }
+            yield return new WaitForSeconds(PlayerSettings.instance.shurikenSpawnTime);
+        }
+    }
+
     public void SpawnTriangle()
     {
         triangle = ObjectPooler.sharedInstance.GetPooledObject("Triangle");
@@ -100,6 +134,16 @@ public class EnemySpawner : MonoBehaviour
         {
             stander.transform.position = SpawnPosition();
             stander.SetActive(true);
+        }
+    }
+
+    public void SpawnShuriken()
+    {
+        shuriken = ObjectPooler.sharedInstance.GetPooledObject("Shuriken");
+        if(shuriken != null)
+        {
+            shuriken.transform.position = SpawnPosition();
+            shuriken.SetActive(true);
         }
     }
 

@@ -13,11 +13,18 @@ public enum BallState
     Options
 }
 
+public enum GameType
+{
+    Classic,
+    Ninja
+}
+
 public class PlayerSettings : MonoBehaviour
 {
     // Script with all the variables needed for ball, turret, enemies
     public static PlayerSettings instance;
 
+    public GameType gameType;
     public BallState ballState = BallState.Upgrade;
     
     public List<object> positiveCards = new List<object>();
@@ -33,6 +40,7 @@ public class PlayerSettings : MonoBehaviour
     public int leaps = 0;
     public int triangleLimit = 5;
     public int standerLimit = 7;
+    public int shurikenLimit = 7;
     public int cardType;
     [Range(300, 1000)]
     public float ballSpeed;
@@ -40,9 +48,11 @@ public class PlayerSettings : MonoBehaviour
     public float triangleRotate = 200f;
     public float triangleSpawnTime = 15f;
     public float standerSpawnTime = 10f;
+    public float shurikenSpawnTime = 10f;
     public bool upgradeTime = false;
     public bool canSpawnTriangle = true;
     public bool canSpawnStander = true;
+    public bool canSpawnShuriken = true;
     public bool cardsDissolved = false;
     public bool isBounced = false;
     public bool isReflected = false;
@@ -83,8 +93,15 @@ public class PlayerSettings : MonoBehaviour
         }
 
         // Checking if we can spawn enemies
-        canSpawnTriangle = (ballState == BallState.Upgrade || GameObject.FindGameObjectsWithTag("Triangle").Length >= triangleLimit) ? false : true;
-        canSpawnStander = (ballState == BallState.Upgrade || GameObject.FindGameObjectsWithTag("Stander").Length >= standerLimit) ? false : true;
+        if(gameType == GameType.Classic)
+        {
+            canSpawnTriangle = (ballState == BallState.Upgrade || GameObject.FindGameObjectsWithTag("Triangle").Length >= triangleLimit) ? false : true;
+            canSpawnStander = (ballState == BallState.Upgrade || GameObject.FindGameObjectsWithTag("Stander").Length >= standerLimit) ? false : true;
+        }
+        if(gameType == GameType.Ninja)
+        {
+            canSpawnShuriken = (ballState == BallState.Upgrade || GameObject.FindGameObjectsWithTag("Shuriken").Length >= shurikenLimit) ? false : true;
+        }
     }
 
     public void CheckLeaps()
