@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 814914802565795450}
   - component: {fileID: 814914802565795448}
   - component: {fileID: 814914802565795449}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: CornerTR
-  m_TagString: Untagged
+  m_TagString: Mirrors
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -159,9 +159,9 @@ GameObject:
   - component: {fileID: 814914802639481015}
   - component: {fileID: 814914802639481013}
   - component: {fileID: 814914802639481018}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: CornerTL
-  m_TagString: Untagged
+  m_TagString: Mirrors
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -337,9 +337,9 @@ GameObject:
   - component: {fileID: 814914803077990367}
   - component: {fileID: 814914803077990365}
   - component: {fileID: 814914803077990306}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: CornerBR
-  m_TagString: Untagged
+  m_TagString: Mirrors
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -483,9 +483,9 @@ GameObject:
   - component: {fileID: 814914803103439496}
   - component: {fileID: 814914803103439497}
   - component: {fileID: 814914803103439502}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: WallTop
-  m_TagString: Untagged
+  m_TagString: Mirrors
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -629,9 +629,9 @@ GameObject:
   - component: {fileID: 814914803432817920}
   - component: {fileID: 814914803432817921}
   - component: {fileID: 814914803432817926}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: WallLeft
-  m_TagString: Untagged
+  m_TagString: Mirrors
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -775,9 +775,9 @@ GameObject:
   - component: {fileID: 814914804296172394}
   - component: {fileID: 814914804296172395}
   - component: {fileID: 814914804296172392}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: WallRight
-  m_TagString: Untagged
+  m_TagString: Mirrors
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -921,9 +921,9 @@ GameObject:
   - component: {fileID: 814914804362870042}
   - component: {fileID: 814914804362870040}
   - component: {fileID: 814914804362870041}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: CornerBL
-  m_TagString: Untagged
+  m_TagString: Mirrors
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1067,9 +1067,9 @@ GameObject:
   - component: {fileID: 814914804394638077}
   - component: {fileID: 814914804394638018}
   - component: {fileID: 814914804394638019}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: WallBottom
-  m_TagString: Untagged
+  m_TagString: Mirrors
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1377,7 +1377,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7206956675651118801}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
   m_Name: 

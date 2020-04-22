@@ -13,7 +13,7 @@ public class Shuriken : MonoBehaviour
 
     private void OnEnable()
     {
-        GetComponentInChildren<SpriteGlow.SpriteGlowEffect>().GlowColor = Random.ColorHSV(0, 1, 1, 1, 0, 1, 1, 1);
+        GetComponentInChildren<SpriteGlow.SpriteGlowEffect>().GlowColor = Random.ColorHSV(0, 1, 1, 1, 1, 1, 1, 1);
         GetComponent<Rigidbody2D>().velocity = Random.insideUnitCircle.normalized * speed;
     }
 

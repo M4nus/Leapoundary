@@ -24,7 +24,7 @@ public class PlayerSettings : MonoBehaviour
     // Script with all the variables needed for ball, turret, enemies
     public static PlayerSettings instance;
 
-    public GameType gameType;
+    public GameType gameType = GameType.Ninja;
     public BallState ballState = BallState.Upgrade;
     
     public List<object> positiveCards = new List<object>();
@@ -42,19 +42,29 @@ public class PlayerSettings : MonoBehaviour
     public int standerLimit = 7;
     public int shurikenLimit = 7;
     public int cardType;
+
     [Range(300, 1000)]
+
     public float ballSpeed;
     public float triangleSpeed = 1f;
     public float triangleRotate = 200f;
     public float triangleSpawnTime = 15f;
     public float standerSpawnTime = 10f;
     public float shurikenSpawnTime = 10f;
+
+    [HideInInspector]
     public bool upgradeTime = false;
-    public bool canSpawnTriangle = true;
-    public bool canSpawnStander = true;
-    public bool canSpawnShuriken = true;
+    [HideInInspector]
+    public bool canSpawnTriangle = false;
+    [HideInInspector]
+    public bool canSpawnStander = false;
+    [HideInInspector]
+    public bool canSpawnShuriken = false;
+    [HideInInspector]
     public bool cardsDissolved = false;
+    [HideInInspector]
     public bool isBounced = false;
+    [HideInInspector]
     public bool isReflected = false;
 
 
@@ -65,10 +75,23 @@ public class PlayerSettings : MonoBehaviour
         else
             Destroy(gameObject);
         
-        positiveCards.AddRange(Resources.LoadAll("Cards/Positive"));
-        negativeCards.AddRange(Resources.LoadAll("Cards/Negative"));
-        neutralCards.AddRange(Resources.LoadAll("Cards/Neutral"));
         //AudioManager.instance.Play("Void");
+
+        if(gameType == GameType.Classic)
+        {
+            canSpawnTriangle = true;
+            canSpawnStander = true;
+            positiveCards.AddRange(Resources.LoadAll("Cards/ClassicPositive"));
+            negativeCards.AddRange(Resources.LoadAll("Cards/ClassicNegative"));
+            neutralCards.AddRange(Resources.LoadAll("Cards/ClassicNeutral"));
+        }
+        if(gameType == GameType.Ninja)
+        {
+            canSpawnShuriken = true;
+            positiveCards.AddRange(Resources.LoadAll("Cards/NinjaPositive"));
+            negativeCards.AddRange(Resources.LoadAll("Cards/NinjaNegative"));
+            neutralCards.AddRange(Resources.LoadAll("Cards/NinjaNeutral"));
+        }
     }
 
     private void Update()
@@ -95,13 +118,23 @@ public class PlayerSettings : MonoBehaviour
         // Checking if we can spawn enemies
         if(gameType == GameType.Classic)
         {
-            canSpawnTriangle = (ballState == BallState.Upgrade || GameObject.FindGameObjectsWithTag("Triangle").Length >= triangleLimit) ? false : true;
-            canSpawnStander = (ballState == BallState.Upgrade || GameObject.FindGameObjectsWithTag("Stander").Length >= standerLimit) ? false : true;
+            ClassicMode();
         }
-        if(gameType == GameType.Ninja)
+        else if(gameType == GameType.Ninja)
         {
-            canSpawnShuriken = (ballState == BallState.Upgrade || GameObject.FindGameObjectsWithTag("Shuriken").Length >= shurikenLimit) ? false : true;
+            NinjaMode();
         }
+    }
+
+    public void ClassicMode()
+    {
+        canSpawnTriangle = (ballState == BallState.Upgrade || GameObject.FindGameObjectsWithTag("Triangle").Length >= triangleLimit) ? false : true;
+        canSpawnStander = (ballState == BallState.Upgrade || GameObject.FindGameObjectsWithTag("Stander").Length >= standerLimit) ? false : true;
+    }
+
+    public void NinjaMode()
+    {
+        canSpawnShuriken = (ballState == BallState.Upgrade || GameObject.FindGameObjectsWithTag("Shuriken").Length >= shurikenLimit) ? false : true;
     }
 
     public void CheckLeaps()
@@ -173,8 +206,17 @@ public class PlayerSettings : MonoBehaviour
         positiveCards.Clear();
         negativeCards.Clear();
         neutralCards.Clear();
-        positiveCards.AddRange(Resources.LoadAll("Cards/Positive"));
-        negativeCards.AddRange(Resources.LoadAll("Cards/Negative"));
-        neutralCards.AddRange(Resources.LoadAll("Cards/Neutral"));
+        if(gameType == GameType.Classic)
+        {
+            positiveCards.AddRange(Resources.LoadAll("Cards/ClassicPositive"));
+            negativeCards.AddRange(Resources.LoadAll("Cards/ClassicNegative"));
+            neutralCards.AddRange(Resources.LoadAll("Cards/ClassicNeutral"));
+        }
+        if(gameType == GameType.Ninja)
+        {
+            positiveCards.AddRange(Resources.LoadAll("Cards/NinjaPositive"));
+            negativeCards.AddRange(Resources.LoadAll("Cards/NinjaNegative"));
+            neutralCards.AddRange(Resources.LoadAll("Cards/NinjaNeutral"));
+        }
     }
 }
