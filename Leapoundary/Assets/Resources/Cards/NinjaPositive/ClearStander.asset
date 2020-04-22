@@ -16,4 +16,4 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: c596985b42597e74799db88ed3d599f8, type: 2}
   name: Clear shurikens
   description: Removes shurikens
-  methodName: ClearEnemyType(Stander)
+  methodName: ClearEnemyType(Shuriken)

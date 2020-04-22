@@ -16,4 +16,4 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: 18ca71018882ca7438f3e2c7cadf2ad5, type: 2}
   name: Spawn
   description: +2 shurikens
-  methodName: SpawnStander(2)
+  methodName: SpawnShuriken(2)

@@ -48,6 +48,11 @@ public class UpgradeSettings : MonoBehaviour
         PlayerSettings.instance.standerLimit += amount;
     }
 
+    public void AddShurikenAmount(int amount)
+    {
+        PlayerSettings.instance.shurikenLimit += amount;
+    }
+
     public void SpawnTriangle(int amount)
     {
         for(int i=0; i<amount; i++)
@@ -60,6 +65,12 @@ public class UpgradeSettings : MonoBehaviour
             spawner.SpawnStander();
     }
 
+    public void SpawnShuriken(int amount)
+    {
+        for(int i = 0; i < amount; i++)
+            spawner.SpawnShuriken();
+    }
+
     public void SpeedSpawnerStander()
     {
         if(PlayerSettings.instance.standerSpawnTime > 5)
@@ -70,6 +81,12 @@ public class UpgradeSettings : MonoBehaviour
     {
         if(PlayerSettings.instance.triangleSpawnTime > 5)
             PlayerSettings.instance.triangleSpawnTime -= 1f;
+    }
+
+    public void SpeedSpawnerShuriken()
+    {
+        if(PlayerSettings.instance.shurikenSpawnTime > 5)
+            PlayerSettings.instance.shurikenSpawnTime -= 1f;
     }
 
     #endregion
@@ -112,6 +129,12 @@ public class UpgradeSettings : MonoBehaviour
     {
         if(PlayerSettings.instance.triangleSpawnTime < 20)
             PlayerSettings.instance.triangleSpawnTime += 1f;
+    }
+
+    public void SlowSpawnerShuriken()
+    {
+        if(PlayerSettings.instance.shurikenSpawnTime < 20)
+            PlayerSettings.instance.shurikenSpawnTime += 1f;
     }
 
     #endregion
