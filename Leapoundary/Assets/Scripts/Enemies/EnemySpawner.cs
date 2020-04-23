@@ -9,6 +9,7 @@ public class EnemySpawner : MonoBehaviour
     public GameObject triangle;
     public GameObject stander;
     public GameObject shuriken;
+    public GameObject kunai;
     public GameObject wall;
     private ParticleContainer pc;
 
@@ -19,6 +20,7 @@ public class EnemySpawner : MonoBehaviour
         StartCoroutine(SpawnTriangles());
         StartCoroutine(SpawnStanders());
         StartCoroutine(SpawnShurikens());
+        StartCoroutine(SpawnKunais());
     }
 
     public IEnumerator SpawnTriangles()
@@ -114,6 +116,32 @@ public class EnemySpawner : MonoBehaviour
                 }
             }
             yield return new WaitForSeconds(PlayerSettings.instance.shurikenSpawnTime);
+        }
+    }
+
+    public IEnumerator SpawnKunais()
+    {
+        while(true)
+        {
+            if(PlayerSettings.instance.canSpawnKunai)
+            {
+                float radius = 12f;    // distance from center
+                float angle = Random.Range(0, Mathf.PI * 2);    // Random angle in radians
+                                                                // sin and cos need value in radians
+                                                                // full turn aroud circle in radians equal 2*PI ~6.283185 rad
+                Vector2 pos2d = new Vector2(Mathf.Sin(angle) * radius, Mathf.Cos(angle) * radius);
+                Vector2 currentSpawnPosition = new Vector3(pos2d.x, pos2d.y, 0);
+                
+                // Spawning kunais
+
+                kunai = ObjectPooler.sharedInstance.GetPooledObject("Kunai");
+                if(triangle != null)
+                {
+                    kunai.transform.position = currentSpawnPosition;
+                    kunai.SetActive(true);
+                }
+            }
+            yield return new WaitForSeconds(PlayerSettings.instance.kunaiSpawnTime);
         }
     }
 

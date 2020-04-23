@@ -41,6 +41,7 @@ public class PlayerSettings : MonoBehaviour
     public int triangleLimit = 5;
     public int standerLimit = 7;
     public int shurikenLimit = 7;
+    public int kunaiLimit = 5;
     public int cardType;
 
     [Range(300, 1000)]
@@ -51,6 +52,7 @@ public class PlayerSettings : MonoBehaviour
     public float triangleSpawnTime = 15f;
     public float standerSpawnTime = 10f;
     public float shurikenSpawnTime = 10f;
+    public float kunaiSpawnTime = 6f;
 
     [HideInInspector]
     public bool upgradeTime = false;
@@ -60,6 +62,8 @@ public class PlayerSettings : MonoBehaviour
     public bool canSpawnStander = false;
     [HideInInspector]
     public bool canSpawnShuriken = false;
+    [HideInInspector]
+    public bool canSpawnKunai = false;
     [HideInInspector]
     public bool cardsDissolved = false;
     [HideInInspector]
@@ -88,6 +92,7 @@ public class PlayerSettings : MonoBehaviour
         if(gameType == GameType.Ninja)
         {
             canSpawnShuriken = true;
+            canSpawnKunai = true;
             positiveCards.AddRange(Resources.LoadAll("Cards/NinjaPositive"));
             negativeCards.AddRange(Resources.LoadAll("Cards/NinjaNegative"));
             neutralCards.AddRange(Resources.LoadAll("Cards/NinjaNeutral"));
@@ -135,6 +140,7 @@ public class PlayerSettings : MonoBehaviour
     public void NinjaMode()
     {
         canSpawnShuriken = (ballState == BallState.Upgrade || GameObject.FindGameObjectsWithTag("Shuriken").Length >= shurikenLimit) ? false : true;
+        canSpawnKunai = (ballState == BallState.Upgrade || GameObject.FindGameObjectsWithTag("Kunai").Length >= shurikenLimit) ? false : true;
     }
 
     public void CheckLeaps()

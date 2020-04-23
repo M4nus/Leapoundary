@@ -27,9 +27,7 @@ public class ColorSetter : MonoBehaviour
             localColor = ColorManager.instance.enviro;
         else if(colorType == ColorType.Other)
             localColor = ColorManager.instance.other;
-
-        Debug.Log(localColor + "  |  " + ColorManager.instance.player);
-
+        
 
         if(GetComponent<SpriteGlow.SpriteGlowEffect>() != null)
             GetComponent<SpriteGlow.SpriteGlowEffect>().GlowColor = localColor;

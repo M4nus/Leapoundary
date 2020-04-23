@@ -15626,7 +15626,7 @@ GameObject:
   - component: {fileID: 1882253007}
   m_Layer: 8
   m_Name: Ball
-  m_TagString: Untagged
+  m_TagString: Ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16847,6 +16847,24 @@ PrefabInstance:
       propertyPath: canSpawnShuriken
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 91214402465166662, guid: b76174a7e6669704eab6baab98c4b127,
+        type: 3}
+      propertyPath: wall
+      value: 
+      objectReference: {fileID: 6504176914647420290, guid: 41a268d98151cb34298e696a94dc75d4,
+        type: 3}
+    - target: {fileID: 91214402465166662, guid: b76174a7e6669704eab6baab98c4b127,
+        type: 3}
+      propertyPath: shuriken
+      value: 
+      objectReference: {fileID: 7289990997023417975, guid: 44e70c0a6a5e990459f1480fae09a740,
+        type: 3}
+    - target: {fileID: 91214402465166662, guid: b76174a7e6669704eab6baab98c4b127,
+        type: 3}
+      propertyPath: kunai
+      value: 
+      objectReference: {fileID: 8352611548198245326, guid: fbfe40186e4728d4a9a4325340ff8660,
+        type: 3}
     - target: {fileID: 771454830183136569, guid: b76174a7e6669704eab6baab98c4b127,
         type: 3}
       propertyPath: pooledObjects.Array.size
@@ -16855,7 +16873,7 @@ PrefabInstance:
     - target: {fileID: 771454830183136569, guid: b76174a7e6669704eab6baab98c4b127,
         type: 3}
       propertyPath: itemsToPool.Array.size
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 771454830183136569, guid: b76174a7e6669704eab6baab98c4b127,
         type: 3}
@@ -16985,18 +17003,22 @@ PrefabInstance:
       propertyPath: itemsToPool.Array.data[7].shouldExpand
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 91214402465166662, guid: b76174a7e6669704eab6baab98c4b127,
+    - target: {fileID: 771454830183136569, guid: b76174a7e6669704eab6baab98c4b127,
         type: 3}
-      propertyPath: wall
+      propertyPath: itemsToPool.Array.data[8].amountToPool
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 771454830183136569, guid: b76174a7e6669704eab6baab98c4b127,
+        type: 3}
+      propertyPath: itemsToPool.Array.data[8].objectToPool
       value: 
-      objectReference: {fileID: 6504176914647420290, guid: 41a268d98151cb34298e696a94dc75d4,
+      objectReference: {fileID: 8352611548198245326, guid: fbfe40186e4728d4a9a4325340ff8660,
         type: 3}
-    - target: {fileID: 91214402465166662, guid: b76174a7e6669704eab6baab98c4b127,
+    - target: {fileID: 771454830183136569, guid: b76174a7e6669704eab6baab98c4b127,
         type: 3}
-      propertyPath: shuriken
-      value: 
-      objectReference: {fileID: 7289990997023417975, guid: 44e70c0a6a5e990459f1480fae09a740,
-        type: 3}
+      propertyPath: itemsToPool.Array.data[8].shouldExpand
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 91214402465166657, guid: b76174a7e6669704eab6baab98c4b127,
         type: 3}
       propertyPath: innerWall

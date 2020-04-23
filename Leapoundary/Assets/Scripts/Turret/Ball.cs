@@ -13,7 +13,8 @@ public class Ball : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.layer == LayerMask.NameToLayer("Enemies"))
+        if(collision.gameObject.layer == LayerMask.NameToLayer("Enemies") 
+        || collision.gameObject.layer == LayerMask.NameToLayer("Kunai"))
         {
             GameObject ballParticles = ObjectPooler.sharedInstance.GetPooledObject("BallBreak");
             if(ballParticles != null)
