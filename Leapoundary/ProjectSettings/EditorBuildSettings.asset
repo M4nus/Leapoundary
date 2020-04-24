@@ -6,14 +6,20 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Menu.unity
+    path: Assets/Scenes/Menu/Menu.unity
     guid: 39b7c4d938b3a91489bfb1ab5d606793
   - enabled: 1
-    path: Assets/Scenes/BaseMobile.unity
+    path: Assets/Scenes/Menu/About.unity
+    guid: fa49ef766bc528e4cb7f55cca18bbd98
+  - enabled: 1
+    path: Assets/Scenes/Menu/GameTypeChooseScene.unity
+    guid: 31f592648fe08a94689051db34df6016
+  - enabled: 1
+    path: Assets/Scenes/GameTypes/ClassicMode.unity
     guid: cd89ce60611716e49b5c9701568b1477
   - enabled: 1
-    path: Assets/Scenes/About.unity
-    guid: fa49ef766bc528e4cb7f55cca18bbd98
+    path: Assets/Scenes/GameTypes/RainbowMode.unity
+    guid: 84c0a524037148a4fb884fdd035c7b22
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: a3e99747bfc83de4ab80ac83724ff94e,
       type: 2}

@@ -89,6 +89,13 @@ public class UpgradeSettings : MonoBehaviour
             PlayerSettings.instance.shurikenSpawnTime -= 1f;
     }
 
+
+    public void SpeedSpawnerKunai()
+    {
+        if(PlayerSettings.instance.kunaiSpawnTime > 1)
+            PlayerSettings.instance.kunaiSpawnTime -= 1f;
+    }
+
     #endregion
 
     #region Positive
@@ -135,6 +142,12 @@ public class UpgradeSettings : MonoBehaviour
     {
         if(PlayerSettings.instance.shurikenSpawnTime < 20)
             PlayerSettings.instance.shurikenSpawnTime += 1f;
+    }
+
+    public void SlowSpawnerKunai()
+    {
+        if(PlayerSettings.instance.kunaiSpawnTime < 20)
+            PlayerSettings.instance.kunaiSpawnTime += 1f;
     }
 
     #endregion

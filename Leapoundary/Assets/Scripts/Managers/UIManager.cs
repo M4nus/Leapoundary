@@ -61,7 +61,10 @@ public class UIManager : MonoBehaviour
         FadeOut();
         Time.timeScale = 1f;
         PlayerSettings.instance.ballState = BallState.Safe;
-        SceneManager.LoadScene("BaseMobile");
+        if(SceneManager.GetActiveScene().name == "ClassicMode")
+            SceneManager.LoadScene("ClassicMode");
+        if(SceneManager.GetActiveScene().name == "RainbowMode")
+            SceneManager.LoadScene("RainbowMode");
     }
 
     public void GoToMenu()

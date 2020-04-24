@@ -1,8 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering;
-using UnityEngine.Rendering.Universal;
+using UnityEngine.SceneManagement;
 
 public enum BallState
 {
@@ -15,6 +14,7 @@ public enum BallState
 
 public enum GameType
 {
+    None,
     Classic,
     Ninja
 }
@@ -24,7 +24,7 @@ public class PlayerSettings : MonoBehaviour
     // Script with all the variables needed for ball, turret, enemies
     public static PlayerSettings instance;
 
-    public GameType gameType = GameType.Ninja;
+    public GameType gameType = GameType.None;
     public BallState ballState = BallState.Upgrade;
     
     public List<object> positiveCards = new List<object>();
@@ -41,7 +41,7 @@ public class PlayerSettings : MonoBehaviour
     public int triangleLimit = 5;
     public int standerLimit = 7;
     public int shurikenLimit = 7;
-    public int kunaiLimit = 5;
+    public int kunaiLimit = 15;
     public int cardType;
 
     [Range(300, 1000)]
@@ -78,8 +78,14 @@ public class PlayerSettings : MonoBehaviour
             instance = this;
         else
             Destroy(gameObject);
-        
+
         //AudioManager.instance.Play("Void");
+
+        
+        if(SceneManager.GetActiveScene().name == "ClassicMode")
+            gameType = GameType.Classic;
+        else if(SceneManager.GetActiveScene().name == "RainbowMode")
+            gameType = GameType.Ninja;
 
         if(gameType == GameType.Classic)
         {
@@ -104,12 +110,15 @@ public class PlayerSettings : MonoBehaviour
         // Checking whether ball was launched or not
         if(ballState != BallState.Death && ballState != BallState.Options)
         {
-            if(ball.transform.parent == currentTurret.transform && !upgradeTime)
-                ballState = BallState.Safe;
-            else if(ball.transform.parent != currentTurret.transform)
-                ballState = BallState.Launched;
-            else if(ball.transform.parent == currentTurret.transform && upgradeTime)
-                ballState = BallState.Upgrade;
+            if(ball != null)
+            {
+                if(ball.transform.parent == currentTurret.transform && !upgradeTime)
+                    ballState = BallState.Safe;
+                else if(ball.transform.parent != currentTurret.transform)
+                    ballState = BallState.Launched;
+                else if(ball.transform.parent == currentTurret.transform && upgradeTime)
+                    ballState = BallState.Upgrade;
+            }
         }
 
         if(ballState == BallState.Upgrade)

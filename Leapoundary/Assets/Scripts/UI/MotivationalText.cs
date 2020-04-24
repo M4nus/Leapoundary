@@ -12,11 +12,21 @@ public class MotivationalText : MonoBehaviour
 
     void OnEnable()
     {
-        Debug.Log(PlayerPrefs.GetInt("HighScore", 0));
         text = GetComponent<TextMeshProUGUI>();
-        if(PlayerSettings.instance.leaps > PlayerPrefs.GetInt("HighScore", 0))
-            text.text = gratulations[Random.Range(0, gratulations.Count)];
-        else
-            text.text = motivational[Random.Range(0, motivational.Count)];
+
+        if(PlayerSettings.instance.gameType == GameType.Classic)
+        {
+            if(PlayerSettings.instance.leaps >= PlayerPrefs.GetInt("HighScoreClassic", 0))
+                text.text = gratulations[Random.Range(0, gratulations.Count)];
+            else
+                text.text = motivational[Random.Range(0, motivational.Count)];
+        }
+        if(PlayerSettings.instance.gameType == GameType.Ninja)
+        {
+            if(PlayerSettings.instance.leaps >= PlayerPrefs.GetInt("HighScoreRainbow", 0))
+                text.text = gratulations[Random.Range(0, gratulations.Count)];
+            else
+                text.text = motivational[Random.Range(0, motivational.Count)];
+        }
     }
 }

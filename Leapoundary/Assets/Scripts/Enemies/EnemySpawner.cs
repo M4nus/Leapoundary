@@ -135,10 +135,12 @@ public class EnemySpawner : MonoBehaviour
                 // Spawning kunais
 
                 kunai = ObjectPooler.sharedInstance.GetPooledObject("Kunai");
-                if(triangle != null)
+                if(kunai != null)
                 {
                     kunai.transform.position = currentSpawnPosition;
                     kunai.SetActive(true);
+                    if(PlayerSettings.instance.kunaiSpawnTime > 1f)
+                        PlayerSettings.instance.kunaiSpawnTime -= 0.1f;
                 }
             }
             yield return new WaitForSeconds(PlayerSettings.instance.kunaiSpawnTime);

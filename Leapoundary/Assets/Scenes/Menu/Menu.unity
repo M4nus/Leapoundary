@@ -5453,7 +5453,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a8d86fbd52ac9a4bbd435e070399f4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: BaseMobile
+  sceneName: GameTypeChooseScene
 --- !u!58 &864234843
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -6235,6 +6235,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 814914802928795815, guid: bec37e4ad0250dc44883ef9454b97890,
+        type: 3}
+      propertyPath: m_Name
+      value: ---------Enviro---------
+      objectReference: {fileID: 0}
     - target: {fileID: 814914802928795812, guid: bec37e4ad0250dc44883ef9454b97890,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6289,11 +6294,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 814914802928795815, guid: bec37e4ad0250dc44883ef9454b97890,
-        type: 3}
-      propertyPath: m_Name
-      value: ---------Enviro---------
       objectReference: {fileID: 0}
     - target: {fileID: 7660319902472743403, guid: bec37e4ad0250dc44883ef9454b97890,
         type: 3}
@@ -6832,12 +6832,12 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 91214402465166663, guid: b76174a7e6669704eab6baab98c4b127,
+    - target: {fileID: 771454830183136569, guid: b76174a7e6669704eab6baab98c4b127,
         type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 771454830183136569, guid: b76174a7e6669704eab6baab98c4b127,
+    - target: {fileID: 91214402465166663, guid: b76174a7e6669704eab6baab98c4b127,
         type: 3}
       propertyPath: m_Enabled
       value: 0

@@ -14,6 +14,13 @@ public class Kunai : MonoBehaviour
         this.transform.up = -dir;
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = -transform.up * speed;
+        StartCoroutine(DisableCooldown());
+    }
+
+    IEnumerator DisableCooldown()
+    {
+        yield return new WaitForSeconds(6f);
+        gameObject.SetActive(false);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
