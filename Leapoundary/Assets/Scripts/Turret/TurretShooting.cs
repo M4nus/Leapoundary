@@ -39,13 +39,13 @@ public class TurretShooting : MonoBehaviour
             PlayerSettings.instance.ResetBall();
         }
     }
-
+    
     private void ShootBall()
     {
         if(!UIManager.IsPointerOverUIElement())
         {
             ps.GetCrosshairDirection(gameObject);
-            ps.ball.GetComponent<Rigidbody2D>().AddForce(ps.ballSpeed * transform.right * Time.fixedDeltaTime, ForceMode2D.Impulse);
+            ps.ball.GetComponent<Rigidbody2D>().AddForce(ps.ballSpeed * transform.right, ForceMode2D.Impulse);
             ps.ball.transform.parent = null;
             AudioManager.instance.PlayRandom("TurretShoot");
         }
@@ -67,7 +67,7 @@ public class TurretShooting : MonoBehaviour
         hit = Physics2D.Raycast(pointer.position, direction, 40f);
 
 
-        if(Physics2D.Raycast((Vector2)pointer.position, direction, 40f));
+        if(Physics2D.Raycast((Vector2)pointer.position, direction, 40f))
         {
             line.enabled = true;
             line.positionCount = 2;

@@ -115,7 +115,7 @@ public class EnemySpawner : MonoBehaviour
                     shuriken.SetActive(true);
                 }
             }
-            yield return new WaitForSeconds(PlayerSettings.instance.shurikenSpawnTime);
+            yield return new WaitForSecondsRealtime(PlayerSettings.instance.shurikenSpawnTime);
         }
     }
 

@@ -44,8 +44,7 @@ public class PlayerSettings : MonoBehaviour
     public int kunaiLimit = 15;
     public int cardType;
 
-    [Range(300, 1000)]
-
+    [Range(0, 1000)]
     public float ballSpeed;
     public float triangleSpeed = 1f;
     public float triangleRotate = 200f;

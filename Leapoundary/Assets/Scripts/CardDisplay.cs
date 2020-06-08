@@ -129,7 +129,7 @@ public class CardDisplay : MonoBehaviour
             titleText.alpha = alpha + 1.1f;
             descriptionText.alpha = alpha + 1.1f;
             symbolImage.color = new Vector4(renderer.color.r, renderer.color.g, renderer.color.b, alpha + 1.1f);
-            alpha += Time.deltaTime * 2;
+            alpha += Time.unscaledDeltaTime * 2;
             yield return null;
         }
     }
@@ -150,7 +150,7 @@ public class CardDisplay : MonoBehaviour
                 //descriptionText.alpha = alpha + 0.6f;
                 //symbolImage.color = new Vector4(renderer.color.r, renderer.color.g, renderer.color.b, alpha + 0.6f);
             }
-            alpha -= Time.deltaTime * 2;
+            alpha -= Time.unscaledDeltaTime * 2;
             yield return null;
         }
         PlayerSettings.instance.cardsDissolved = true;

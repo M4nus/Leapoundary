@@ -20,6 +20,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameTypes/RainbowMode.unity
     guid: 84c0a524037148a4fb884fdd035c7b22
+  - enabled: 1
+    path: Assets/Scenes/Menu/Rules.unity
+    guid: fb3f91217b968bc47807893db6a2d5ec
+  - enabled: 1
+    path: Assets/Scenes/Menu/Support.unity
+    guid: a65607573ba4ff94eaea1b2e17782b5d
+  - enabled: 1
+    path: Assets/Scenes/Menu/FromAuthor.unity
+    guid: ca557b139e0dd594bb1f0dba508bca3e
+  - enabled: 1
+    path: Assets/Scenes/Menu/Credits.unity
+    guid: 6d2acda4974ec324b8166874aa266712
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: a3e99747bfc83de4ab80ac83724ff94e,
       type: 2}

@@ -94,7 +94,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  rotateSpeed: 20
+  rotateSpeed: 700
+  colors:
+  - {r: 1, g: 0, b: 0, a: 1}
+  - {r: 0.8018868, g: 0.7803934, b: 0.19290671, a: 1}
+  - {r: 0.2215305, g: 0.735849, b: 0.16313633, a: 1}
+  - {r: 0.23642756, g: 0.7264151, b: 0.72032833, a: 1}
+  - {r: 0, g: 0.34550333, b: 1, a: 1}
+  - {r: 0.51446724, g: 0, b: 1, a: 1}
+  - {r: 1, g: 0, b: 0.63320255, a: 1}
 --- !u!1 &7289990998686567781
 GameObject:
   m_ObjectHideFlags: 0
@@ -190,8 +198,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   glowColor: {r: 0, g: 0.7892978, b: 1, a: 1}
-  glowBrightness: 4
-  outlineWidth: 10
-  alphaThreshold: 0.05
+  glowBrightness: 2
+  outlineWidth: 1
+  alphaThreshold: 1
   drawOutside: 0
-  enableInstancing: 0
+  enableInstancing: 1

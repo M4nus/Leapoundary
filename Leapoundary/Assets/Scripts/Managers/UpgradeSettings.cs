@@ -32,10 +32,10 @@ public class UpgradeSettings : MonoBehaviour
 
     public void DecreaseBallSpeed(float amount)
     {
-        PlayerSettings.instance.ballSpeed -= amount;
+        PlayerSettings.instance.ballSpeed *= (100f - amount) / 100f;
 
-        if(PlayerSettings.instance.ballSpeed < 300)
-            PlayerSettings.instance.ballSpeed = 300;
+        if(PlayerSettings.instance.ballSpeed < 5f)
+            PlayerSettings.instance.ballSpeed = 5f;
     }
     
     public void AddTriangleAmount(int amount)
@@ -110,10 +110,10 @@ public class UpgradeSettings : MonoBehaviour
 
     public void IncreaseBallSpeed(float amount)
     {
-        PlayerSettings.instance.ballSpeed += amount;
+        PlayerSettings.instance.ballSpeed += (100 + amount) / 100f;
 
-        if(PlayerSettings.instance.ballSpeed > 1000)
-            PlayerSettings.instance.ballSpeed = 1000;
+        if(PlayerSettings.instance.ballSpeed > 25)
+            PlayerSettings.instance.ballSpeed = 25;
     }
 
     public void ClearEnemyType(string tag)
@@ -202,6 +202,11 @@ public class UpgradeSettings : MonoBehaviour
             PlayerSettings.instance.isReflected = true;
         else
             PlayerSettings.instance.isReflected = false;
+    }
+
+    public void ToggleWallsColor()
+    {
+        GetComponent<UIManager>().ChangeWallsColor();
     }
     #endregion
 }

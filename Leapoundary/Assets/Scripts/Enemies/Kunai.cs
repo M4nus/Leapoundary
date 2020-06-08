@@ -14,12 +14,34 @@ public class Kunai : MonoBehaviour
         this.transform.up = -dir;
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = -transform.up * speed;
+        Time.timeScale = 1f;
+        Time.fixedDeltaTime = 0.02f * Time.timeScale;
         StartCoroutine(DisableCooldown());
+    }
+
+    private void OnDisable()
+    {
+        Time.timeScale = 1f;
+        Time.fixedDeltaTime = 0.02f * Time.timeScale;
+    }
+    
+    void Update()
+    {
+        if(PlayerSettings.instance.ballState != BallState.Safe && PlayerSettings.instance.ballState != BallState.Upgrade)
+        {
+            Time.timeScale = 1f;
+            Time.fixedDeltaTime = 0.02f * Time.timeScale;
+        }
+        else
+        {
+            Time.timeScale = 0.1f;
+            Time.fixedDeltaTime = 0.02f * Time.timeScale;
+        }
     }
 
     IEnumerator DisableCooldown()
     {
-        yield return new WaitForSeconds(6f);
+        yield return new WaitForSeconds(10f);
         gameObject.SetActive(false);
     }
 

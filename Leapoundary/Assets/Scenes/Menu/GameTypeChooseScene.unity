@@ -1052,6 +1052,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 91214402465166660, guid: b76174a7e6669704eab6baab98c4b127,
+        type: 3}
+      propertyPath: ballSpeed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 91214402465166662, guid: b76174a7e6669704eab6baab98c4b127,
         type: 3}
       propertyPath: m_Enabled

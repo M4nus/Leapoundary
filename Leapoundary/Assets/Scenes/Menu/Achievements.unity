@@ -2559,6 +2559,17 @@ PrefabInstance:
       propertyPath: leaps
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 91214402465166660, guid: b76174a7e6669704eab6baab98c4b127,
+        type: 3}
+      propertyPath: ballSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 91214402465166662, guid: b76174a7e6669704eab6baab98c4b127,
+        type: 3}
+      propertyPath: wall
+      value: 
+      objectReference: {fileID: 6504176914647420290, guid: 41a268d98151cb34298e696a94dc75d4,
+        type: 3}
     - target: {fileID: 771454830183136569, guid: b76174a7e6669704eab6baab98c4b127,
         type: 3}
       propertyPath: pooledObjects.Array.size
@@ -2681,12 +2692,6 @@ PrefabInstance:
       propertyPath: itemsToPool.Array.data[6].shouldExpand
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 91214402465166662, guid: b76174a7e6669704eab6baab98c4b127,
-        type: 3}
-      propertyPath: wall
-      value: 
-      objectReference: {fileID: 6504176914647420290, guid: 41a268d98151cb34298e696a94dc75d4,
-        type: 3}
     - target: {fileID: 91214402465166657, guid: b76174a7e6669704eab6baab98c4b127,
         type: 3}
       propertyPath: innerWall
@@ -2702,6 +2707,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 814914802928795815, guid: bec37e4ad0250dc44883ef9454b97890,
+        type: 3}
+      propertyPath: m_Name
+      value: ---------Enviro---------
+      objectReference: {fileID: 0}
     - target: {fileID: 814914802928795812, guid: bec37e4ad0250dc44883ef9454b97890,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2756,11 +2766,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 814914802928795815, guid: bec37e4ad0250dc44883ef9454b97890,
-        type: 3}
-      propertyPath: m_Name
-      value: ---------Enviro---------
       objectReference: {fileID: 0}
     - target: {fileID: 7660319902472743403, guid: bec37e4ad0250dc44883ef9454b97890,
         type: 3}
