@@ -156,7 +156,7 @@ PlayerSettings:
   enableFrameTimingStats: 0
   useHDRDisplay: 0
   D3DHDRBitDepth: 0
-  m_ColorGamuts: 00000000
+  m_ColorGamuts: 0000000003000000
   targetPixelDensity: 30
   resolutionScalingMode: 0
   androidSupportedAspectRatio: 1
@@ -276,7 +276,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 1042b733f2c22b343ab61c52fdd946d2, type: 3}
+      m_Icon: {fileID: 2800000, guid: 28945188ebb2c4045838de580405ea78, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0
@@ -284,43 +284,7 @@ PlayerSettings:
   - m_BuildTarget: Android
     m_Icons:
     - m_Textures:
-      - {fileID: 2800000, guid: 1f3e782d113ae5b43a7e1dea32ec0348, type: 3}
-      m_Width: 192
-      m_Height: 192
-      m_Kind: 0
-      m_SubKind: 
-    - m_Textures:
-      - {fileID: 0}
-      m_Width: 144
-      m_Height: 144
-      m_Kind: 0
-      m_SubKind: 
-    - m_Textures:
-      - {fileID: 0}
-      m_Width: 96
-      m_Height: 96
-      m_Kind: 0
-      m_SubKind: 
-    - m_Textures:
-      - {fileID: 0}
-      m_Width: 72
-      m_Height: 72
-      m_Kind: 0
-      m_SubKind: 
-    - m_Textures:
-      - {fileID: 0}
-      m_Width: 48
-      m_Height: 48
-      m_Kind: 0
-      m_SubKind: 
-    - m_Textures:
-      - {fileID: 0}
-      m_Width: 36
-      m_Height: 36
-      m_Kind: 0
-      m_SubKind: 
-    - m_Textures:
-      - {fileID: 2800000, guid: 1042b733f2c22b343ab61c52fdd946d2, type: 3}
+      - {fileID: 2800000, guid: 28945188ebb2c4045838de580405ea78, type: 3}
       m_Width: 192
       m_Height: 192
       m_Kind: 1
@@ -356,27 +320,65 @@ PlayerSettings:
       m_Kind: 1
       m_SubKind: 
     - m_Textures:
-      - {fileID: 2800000, guid: fdb3d107420e2aa46abbf585deabf29f, type: 3}
-      - {fileID: 2800000, guid: 1042b733f2c22b343ab61c52fdd946d2, type: 3}
+      - {fileID: 2800000, guid: 28945188ebb2c4045838de580405ea78, type: 3}
+      m_Width: 192
+      m_Height: 192
+      m_Kind: 0
+      m_SubKind: 
+    - m_Textures:
+      - {fileID: 0}
+      m_Width: 144
+      m_Height: 144
+      m_Kind: 0
+      m_SubKind: 
+    - m_Textures:
+      - {fileID: 0}
+      m_Width: 96
+      m_Height: 96
+      m_Kind: 0
+      m_SubKind: 
+    - m_Textures:
+      - {fileID: 0}
+      m_Width: 72
+      m_Height: 72
+      m_Kind: 0
+      m_SubKind: 
+    - m_Textures:
+      - {fileID: 0}
+      m_Width: 48
+      m_Height: 48
+      m_Kind: 0
+      m_SubKind: 
+    - m_Textures:
+      - {fileID: 0}
+      m_Width: 36
+      m_Height: 36
+      m_Kind: 0
+      m_SubKind: 
+    - m_Textures:
+      - {fileID: 2800000, guid: aa14b136bf6c9684fbde6f47f1e9b670, type: 3}
+      - {fileID: 2800000, guid: 5927445af92bc044f9c9ad3b3df3f355, type: 3}
       m_Width: 432
       m_Height: 432
       m_Kind: 2
       m_SubKind: 
     - m_Textures:
-      - {fileID: 0}
-      - {fileID: 2800000, guid: 1042b733f2c22b343ab61c52fdd946d2, type: 3}
+      - {fileID: 2800000, guid: aa14b136bf6c9684fbde6f47f1e9b670, type: 3}
+      - {fileID: 2800000, guid: 6ec0161e88c6a0547acf71a0839c3c35, type: 3}
       m_Width: 324
       m_Height: 324
       m_Kind: 2
       m_SubKind: 
     - m_Textures:
-      - {fileID: 0}
-      - {fileID: 2800000, guid: 1042b733f2c22b343ab61c52fdd946d2, type: 3}
+      - {fileID: 2800000, guid: aa14b136bf6c9684fbde6f47f1e9b670, type: 3}
+      - {fileID: 2800000, guid: 6ec0161e88c6a0547acf71a0839c3c35, type: 3}
       m_Width: 216
       m_Height: 216
       m_Kind: 2
       m_SubKind: 
-    - m_Textures: []
+    - m_Textures:
+      - {fileID: 2800000, guid: aa14b136bf6c9684fbde6f47f1e9b670, type: 3}
+      - {fileID: 0}
       m_Width: 162
       m_Height: 162
       m_Kind: 2
@@ -401,7 +403,7 @@ PlayerSettings:
   openGLRequireES32: 0
   m_TemplateCustomTags: {}
   mobileMTRendering:
-    Android: 1
+    Android: 0
     iPhone: 1
     tvOS: 1
   m_BuildTargetGroupLightmapEncodingQuality: []

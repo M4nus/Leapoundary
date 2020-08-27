@@ -38,6 +38,7 @@ public class PlayerSettings : MonoBehaviour
 
     public int lives = 3;
     public int leaps = 0;
+    public int borderHitCount = 0;
     public int triangleLimit = 5;
     public int standerLimit = 7;
     public int shurikenLimit = 7;
@@ -167,10 +168,17 @@ public class PlayerSettings : MonoBehaviour
 
             upgradeTime = true;
         }
-        if(leaps <= 180)
+        if(borderHitCount >= 5 && borderHitCount < 10)
         {
-            gameObject.GetComponent<UpgradeSettings>().HueIncrement(1);
+            leaps++;
+            borderHitCount = 0;
         }
+        else if(borderHitCount >= 10)
+        {
+            leaps += 2;
+            borderHitCount = 0;
+        }
+        gameObject.GetComponent<UpgradeSettings>().HueIncrement(1);
     }
 
     public void ResetBall()

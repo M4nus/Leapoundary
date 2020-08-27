@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: WallColor
   m_EditorClassIdentifier: 
   symbol: {fileID: 21300000, guid: f050b492e03119344b04cf01a3486662, type: 3}
-  material: {fileID: 2100000, guid: af56fc4168c500e4182d269ed540e089, type: 2}
+  materialGlow: {fileID: 2100000, guid: af56fc4168c500e4182d269ed540e089, type: 2}
+  materialPlain: {fileID: 2100000, guid: 3f7621bc16e6ae4448b4070ffaefeb83, type: 2}
   name: Walls Color
   description: Toggle Walls Color
   methodName: ToggleWallsColor()

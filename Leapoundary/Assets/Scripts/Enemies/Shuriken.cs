@@ -14,11 +14,20 @@ public class Shuriken : MonoBehaviour
     public float rotateSpeed = 100f;
 
     public Color[] colors;
+    public Settings settings;
 
     private void OnEnable()
     {
-        //GetComponentInChildren<SpriteGlow.SpriteGlowEffect>().GlowColor = Random.ColorHSV(0f, 1f, 1, 1, 1, 1, 1, 1);
-        GetComponentInChildren<SpriteGlow.SpriteGlowEffect>().GlowColor = colors[Random.Range(0, colors.Length)];
+
+        if(settings.GetGraphicalOption() == 0)
+        {
+            GetComponentInChildren<SpriteRenderer>().color = colors[Random.Range(0, colors.Length)];
+        }
+        else if(settings.GetGraphicalOption() == 1)
+        {
+            GetComponentInChildren<SpriteGlow.SpriteGlowEffect>().GlowColor = colors[Random.Range(0, colors.Length)];
+        }
+
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = Random.insideUnitCircle.normalized * speed;
         Time.timeScale = 1f;
@@ -29,6 +38,14 @@ public class Shuriken : MonoBehaviour
     {
         Time.timeScale = 1f;
         Time.fixedDeltaTime = 0.02f * Time.timeScale;
+    }
+
+    private void Start()
+    {
+        if(settings.GetGraphicalOption() == 0)
+        {
+            GetComponentInChildren<SpriteGlow.SpriteGlowEffect>().enabled = false;
+        }
     }
 
     // Update is called once per frame

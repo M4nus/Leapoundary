@@ -25,6 +25,7 @@ public class BorderHit : MonoBehaviour
                 hitParticles.transform.position = collision.transform.position;
                 hitParticles.SetActive(true);
             }
+            PlayerSettings.instance.borderHitCount++;
 
             anim.SetTrigger("Shine");
             AudioManager.instance.PlayRandom("WallHit");

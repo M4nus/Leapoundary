@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Stander3
   m_EditorClassIdentifier: 
   symbol: {fileID: 21300000, guid: 49e2502da703dd54d935f8c28172518c, type: 3}
-  material: {fileID: 2100000, guid: 18ca71018882ca7438f3e2c7cadf2ad5, type: 2}
+  materialGlow: {fileID: 2100000, guid: 18ca71018882ca7438f3e2c7cadf2ad5, type: 2}
+  materialPlain: {fileID: 2100000, guid: 8de526ae95579c8479d76a0581b1484d, type: 2}
   name: Limit
   description: +3 stander limit
   methodName: AddStanderAmount(3)

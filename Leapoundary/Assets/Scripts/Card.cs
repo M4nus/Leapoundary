@@ -8,7 +8,8 @@ using UnityEngine.Events;
 public class Card : ScriptableObject
 {
     public Sprite symbol;
-    public Material material;
+    public Material materialGlow;
+    public Material materialPlain;
 
     public new string name;
     public string description;

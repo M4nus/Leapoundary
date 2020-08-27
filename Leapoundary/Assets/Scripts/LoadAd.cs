@@ -14,6 +14,7 @@ public class LoadAd : MonoBehaviour
         if(collider.gameObject.layer == LayerMask.NameToLayer("Ball"))
         {
             ShowRewardedAd();
+            PlayerSettings.instance.ResetBall();
         }
     }
 

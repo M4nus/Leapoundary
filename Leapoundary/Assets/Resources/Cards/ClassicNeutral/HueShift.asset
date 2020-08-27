@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: HueShift
   m_EditorClassIdentifier: 
   symbol: {fileID: 21300000, guid: 5c1073d6772fff9498648235a78fffc2, type: 3}
-  material: {fileID: 2100000, guid: af56fc4168c500e4182d269ed540e089, type: 2}
+  materialGlow: {fileID: 2100000, guid: af56fc4168c500e4182d269ed540e089, type: 2}
+  materialPlain: {fileID: 2100000, guid: 3f7621bc16e6ae4448b4070ffaefeb83, type: 2}
   name: Hue shift
   description: Toggle hue shift
   methodName: HueShift()

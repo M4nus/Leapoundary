@@ -30,6 +30,7 @@ public class Ball : MonoBehaviour
                 enemyParticles.SetActive(true);
             }
             collision.gameObject.SetActive(false);
+            PlayerSettings.instance.borderHitCount = 0;
             AudioManager.instance.PlayRandom("EnemyHit");
             AudioManager.instance.PlayRandom("BallReturn");
         }

@@ -9,6 +9,7 @@ public class LoadTwitter : MonoBehaviour
         if(collider.gameObject.layer == LayerMask.NameToLayer("Ball"))
         {
             Application.OpenURL("https://twitter.com/M4nusPotax");
+            PlayerSettings.instance.ResetBall();
         }
     }
 

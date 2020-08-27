@@ -11,7 +11,8 @@ public class CardDisplay : MonoBehaviour
 {
     
     public Card card;
-    
+    public Settings settings;
+
     public Image symbolImage;
     public Button button;
     public TextMeshProUGUI titleText;
@@ -41,7 +42,14 @@ public class CardDisplay : MonoBehaviour
         symbolImage.sprite = card.symbol;
         titleText.text = card.name;
         descriptionText.text = card.description;
-        renderer.material = card.material;
+        if(settings.GetGraphicalOption() == 0)
+        {
+            renderer.material = card.materialPlain;
+        }
+        else if(settings.GetGraphicalOption() == 1)
+        {
+            renderer.material = card.materialGlow;
+        }
 
         // Add behaviour to card
         StartCoroutine(Dissolve());
