@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6688696350630559396}
   - component: {fileID: 6688696350630559397}
   - component: {fileID: 8737607449808588927}
+  - component: {fileID: 6262179554029102653}
   m_Layer: 10
   m_Name: Stander
   m_TagString: Stander
@@ -130,3 +131,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae3c661e74016b0428d2be1290e84d69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6262179554029102653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6688696350630559392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79eb79e6d80d75e4db39baee84d5e74c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  settings: {fileID: 11400000, guid: 72bb351bb6f138f4c9ce578e50ccf703, type: 2}
+  color: {r: 0.7075472, g: 0, b: 0.0360968, a: 1}

@@ -215,8 +215,6 @@ RectTransform:
   - {fileID: 2145722940}
   - {fileID: 1179332747}
   - {fileID: 2051561655}
-  - {fileID: 620655483}
-  - {fileID: 1178482415}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -432,6 +430,7 @@ GameObject:
   - component: {fileID: 620655488}
   - component: {fileID: 620655485}
   - component: {fileID: 620655484}
+  - component: {fileID: 620655489}
   m_Layer: 9
   m_Name: Advertisement
   m_TagString: Untagged
@@ -447,16 +446,16 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 620655482}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 40, y: 40, z: 40}
+  m_LocalPosition: {x: 0, y: 0, z: 95}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1000116371}
-  m_Father: {fileID: 465466}
-  m_RootOrder: 4
+  m_Father: {fileID: 1838214742}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 211, y: -73}
+  m_AnchoredPosition: {x: -4.725006, y: -1.824997}
   m_SizeDelta: {x: 2, y: 2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!58 &620655484
@@ -571,6 +570,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a82759d76e82f1b42861b2dd99b6ecd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &620655489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 620655482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79eb79e6d80d75e4db39baee84d5e74c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  settings: {fileID: 11400000, guid: 72bb351bb6f138f4c9ce578e50ccf703, type: 2}
+  color: {r: 0.91764706, g: 0, b: 1, a: 1}
 --- !u!1 &653260035
 GameObject:
   m_ObjectHideFlags: 0
@@ -5544,6 +5557,7 @@ GameObject:
   - component: {fileID: 1178482419}
   - component: {fileID: 1178482417}
   - component: {fileID: 1178482416}
+  - component: {fileID: 1178482421}
   m_Layer: 9
   m_Name: Twitter
   m_TagString: Untagged
@@ -5559,16 +5573,16 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1178482414}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 40, y: 40, z: 40}
+  m_LocalPosition: {x: 0, y: 0, z: 95}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 216841376}
-  m_Father: {fileID: 465466}
-  m_RootOrder: 5
+  m_Father: {fileID: 1838214742}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 211, y: -148}
+  m_AnchoredPosition: {x: -4.725006, y: -3.699997}
   m_SizeDelta: {x: 2, y: 2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!58 &1178482416
@@ -5683,6 +5697,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1178482421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1178482414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79eb79e6d80d75e4db39baee84d5e74c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  settings: {fileID: 11400000, guid: 72bb351bb6f138f4c9ce578e50ccf703, type: 2}
+  color: {r: 1, g: 0, b: 0.10980392, a: 1}
 --- !u!1 &1179332746
 GameObject:
   m_ObjectHideFlags: 0
@@ -6081,6 +6109,7 @@ GameObject:
   - component: {fileID: 1531337281}
   - component: {fileID: 1531337282}
   - component: {fileID: 1531337283}
+  - component: {fileID: 1531337284}
   m_Layer: 9
   m_Name: CurrentTurret
   m_TagString: Untagged
@@ -6217,6 +6246,20 @@ MonoBehaviour:
   gameManager: {fileID: 262957199}
   line: {fileID: 2129055573}
   pointer: {fileID: 1105658088}
+--- !u!114 &1531337284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1531337277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79eb79e6d80d75e4db39baee84d5e74c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  settings: {fileID: 11400000, guid: 72bb351bb6f138f4c9ce578e50ccf703, type: 2}
+  color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1536070307
 GameObject:
   m_ObjectHideFlags: 0
@@ -11298,6 +11341,8 @@ Transform:
   m_Children:
   - {fileID: 1531337279}
   - {fileID: 2027927748}
+  - {fileID: 620655483}
+  - {fileID: 1178482415}
   - {fileID: 2129055574}
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -11451,6 +11496,7 @@ GameObject:
   - component: {fileID: 2027927750}
   - component: {fileID: 2027927751}
   - component: {fileID: 2027927749}
+  - component: {fileID: 2027927754}
   m_Layer: 9
   m_Name: ExitTurret
   m_TagString: Untagged
@@ -11586,6 +11632,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2027927754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2027927747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79eb79e6d80d75e4db39baee84d5e74c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  settings: {fileID: 11400000, guid: 72bb351bb6f138f4c9ce578e50ccf703, type: 2}
+  color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &2051561654
 GameObject:
   m_ObjectHideFlags: 0
@@ -11882,7 +11942,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1838214742}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2145722939
 GameObject:

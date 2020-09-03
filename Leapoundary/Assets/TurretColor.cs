@@ -5,13 +5,14 @@ using UnityEngine;
 public class TurretColor : MonoBehaviour
 {
     public Settings settings;
+    public Color color = Color.white;
 
     void Start()
     {
         if(settings.GetGraphicalOption() == 0)
         {
-            GetComponentInChildren<SpriteRenderer>().color = Color.white;
-            GetComponent<SpriteGlow.SpriteGlowEffect>().GlowColor = Color.white;
+            GetComponentInChildren<SpriteRenderer>().color = color;
+            GetComponent<SpriteGlow.SpriteGlowEffect>().GlowColor = color;
         }
     }
 }

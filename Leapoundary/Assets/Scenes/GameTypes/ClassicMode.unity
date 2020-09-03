@@ -2024,6 +2024,7 @@ GameObject:
   - component: {fileID: 529610674}
   - component: {fileID: 529610672}
   - component: {fileID: 529610671}
+  - component: {fileID: 529610675}
   m_Layer: 0
   m_Name: Heart (2)
   m_TagString: Untagged
@@ -2125,6 +2126,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdfa040c78a9d084ea49cd9f8965d276, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &529610675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 529610670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79eb79e6d80d75e4db39baee84d5e74c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  settings: {fileID: 11400000, guid: 72bb351bb6f138f4c9ce578e50ccf703, type: 2}
+  color: {r: 0, g: 0.654902, b: 0.7490196, a: 1}
 --- !u!1 &569906928
 GameObject:
   m_ObjectHideFlags: 0
@@ -2355,6 +2370,7 @@ GameObject:
   - component: {fileID: 659532694}
   - component: {fileID: 659532692}
   - component: {fileID: 659532691}
+  - component: {fileID: 659532695}
   m_Layer: 0
   m_Name: Heart (1)
   m_TagString: Untagged
@@ -2456,6 +2472,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdfa040c78a9d084ea49cd9f8965d276, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &659532695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 659532690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79eb79e6d80d75e4db39baee84d5e74c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  settings: {fileID: 11400000, guid: 72bb351bb6f138f4c9ce578e50ccf703, type: 2}
+  color: {r: 0, g: 0.654902, b: 0.7490196, a: 1}
 --- !u!1 &670918325
 GameObject:
   m_ObjectHideFlags: 0
@@ -2468,6 +2498,7 @@ GameObject:
   - component: {fileID: 670918329}
   - component: {fileID: 670918327}
   - component: {fileID: 670918326}
+  - component: {fileID: 670918330}
   m_Layer: 0
   m_Name: Heart (3)
   m_TagString: Untagged
@@ -2569,6 +2600,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdfa040c78a9d084ea49cd9f8965d276, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &670918330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 670918325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79eb79e6d80d75e4db39baee84d5e74c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  settings: {fileID: 11400000, guid: 72bb351bb6f138f4c9ce578e50ccf703, type: 2}
+  color: {r: 0, g: 0.654902, b: 0.7490196, a: 1}
 --- !u!1 &670982573
 GameObject:
   m_ObjectHideFlags: 0
@@ -8008,6 +8053,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   settings: {fileID: 11400000, guid: 72bb351bb6f138f4c9ce578e50ccf703, type: 2}
+  color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &916379807
 GameObject:
   m_ObjectHideFlags: 0
@@ -8173,6 +8219,7 @@ GameObject:
   - component: {fileID: 1027260908}
   - component: {fileID: 1027260905}
   - component: {fileID: 1027260907}
+  - component: {fileID: 1027260909}
   m_Layer: 0
   m_Name: Heart
   m_TagString: Untagged
@@ -8274,6 +8321,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdfa040c78a9d084ea49cd9f8965d276, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1027260909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1027260904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79eb79e6d80d75e4db39baee84d5e74c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  settings: {fileID: 11400000, guid: 72bb351bb6f138f4c9ce578e50ccf703, type: 2}
+  color: {r: 0, g: 0.654902, b: 0.7490196, a: 1}
 --- !u!1 &1041085632
 GameObject:
   m_ObjectHideFlags: 0
@@ -9666,6 +9727,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   settings: {fileID: 11400000, guid: 72bb351bb6f138f4c9ce578e50ccf703, type: 2}
+  color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1536070307
 GameObject:
   m_ObjectHideFlags: 0
@@ -15472,6 +15534,7 @@ GameObject:
   - component: {fileID: 1993582483}
   - component: {fileID: 1993582481}
   - component: {fileID: 1993582480}
+  - component: {fileID: 1993582484}
   m_Layer: 0
   m_Name: Heart (4)
   m_TagString: Untagged
@@ -15573,6 +15636,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdfa040c78a9d084ea49cd9f8965d276, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1993582484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1993582479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79eb79e6d80d75e4db39baee84d5e74c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  settings: {fileID: 11400000, guid: 72bb351bb6f138f4c9ce578e50ccf703, type: 2}
+  color: {r: 0, g: 0.654902, b: 0.7490196, a: 1}
 --- !u!1 &2069594962
 GameObject:
   m_ObjectHideFlags: 0
