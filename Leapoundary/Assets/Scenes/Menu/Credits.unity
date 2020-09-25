@@ -5679,6 +5679,7 @@ GameObject:
   - component: {fileID: 1531337281}
   - component: {fileID: 1531337282}
   - component: {fileID: 1531337283}
+  - component: {fileID: 1531337284}
   m_Layer: 9
   m_Name: CurrentTurret
   m_TagString: Untagged
@@ -5815,6 +5816,20 @@ MonoBehaviour:
   gameManager: {fileID: 262957199}
   line: {fileID: 2129055573}
   pointer: {fileID: 1105658088}
+--- !u!114 &1531337284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1531337277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79eb79e6d80d75e4db39baee84d5e74c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  settings: {fileID: 11400000, guid: 72bb351bb6f138f4c9ce578e50ccf703, type: 2}
+  color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1536070307
 GameObject:
   m_ObjectHideFlags: 0
@@ -11049,6 +11064,7 @@ GameObject:
   - component: {fileID: 2027927750}
   - component: {fileID: 2027927751}
   - component: {fileID: 2027927749}
+  - component: {fileID: 2027927754}
   m_Layer: 9
   m_Name: ExitTurret
   m_TagString: Untagged
@@ -11184,6 +11200,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2027927754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2027927747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79eb79e6d80d75e4db39baee84d5e74c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  settings: {fileID: 11400000, guid: 72bb351bb6f138f4c9ce578e50ccf703, type: 2}
+  color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &2051561654
 GameObject:
   m_ObjectHideFlags: 0
@@ -11248,18 +11278,18 @@ MonoBehaviour:
 
     - Delia (ideas & testing)
 
-    - Tomasz Potakowski
-    (game icon)
+    - Tomasz & Magda
+    Potakowscy (game icons and support)
 
-    - Github (giving me opportunity to create this game)
+    - Github (giving me opportunity to create
+    this game)
 
-    -
-    Everyone else who contributed to making this game.
+    - Everyone else who contributed to making this game.
 
 
 
-    You are all part of
-    that game now :)'
+    You
+    are all part of that game now :)'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b12f0488c466df24cb674b2070db12bb, type: 2}
   m_sharedMaterial: {fileID: -6333605691918709701, guid: b12f0488c466df24cb674b2070db12bb,
@@ -11305,7 +11335,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 180
+  m_firstOverflowCharacterIndex: 201
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -11329,10 +11359,10 @@ MonoBehaviour:
   m_margin: {x: 274.50406, y: -63.015076, z: -716.25635, w: -45.04772}
   m_textInfo:
     textComponent: {fileID: 2051561656}
-    characterCount: 271
+    characterCount: 292
     spriteCount: 0
-    spaceCount: 50
-    wordCount: 46
+    spaceCount: 54
+    wordCount: 49
     linkCount: 0
     lineCount: 10
     pageCount: 1

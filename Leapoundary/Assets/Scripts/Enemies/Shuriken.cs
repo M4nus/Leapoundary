@@ -21,11 +21,11 @@ public class Shuriken : MonoBehaviour
 
         if(settings.GetGraphicalOption() == 0)
         {
-            GetComponentInChildren<SpriteRenderer>().color = colors[Random.Range(0, colors.Length)];
+            GetComponentInChildren<SpriteRenderer>().color = colors[Random.Range(7, 13)];
         }
         else if(settings.GetGraphicalOption() == 1)
         {
-            GetComponentInChildren<SpriteGlow.SpriteGlowEffect>().GlowColor = colors[Random.Range(0, colors.Length)];
+            GetComponentInChildren<SpriteGlow.SpriteGlowEffect>().GlowColor = colors[Random.Range(0, 6)];
         }
 
         rb = GetComponent<Rigidbody2D>();

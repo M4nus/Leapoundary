@@ -15,4 +15,13 @@ public class TurretColor : MonoBehaviour
             GetComponent<SpriteGlow.SpriteGlowEffect>().GlowColor = color;
         }
     }
+
+    private void OnEnable()
+    {
+        if(settings.GetGraphicalOption() == 0)
+        {
+            GetComponentInChildren<SpriteRenderer>().color = color;
+            GetComponent<SpriteGlow.SpriteGlowEffect>().GlowColor = color;
+        }
+    }
 }

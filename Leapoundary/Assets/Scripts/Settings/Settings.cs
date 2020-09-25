@@ -9,7 +9,7 @@ public class Settings : ScriptableObject
     void OnEnable()
     {
         Debug.Log("SDK lvl: " + GetSDKLevel());
-        if(GetSDKLevel() <= 20)
+        if(GetSDKLevel() <= 23)
         {
             SetGraphicalOption(0);
         }
