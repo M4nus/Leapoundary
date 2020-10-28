@@ -3254,7 +3254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8f6d3c6e4250e84192f5b34ce9e71bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  glowColor: {r: 0.827451, g: 0.41960785, b: 1, a: 1}
+  glowColor: {r: 1, g: 1, b: 1, a: 1}
   glowBrightness: 2
   outlineWidth: 10
   alphaThreshold: 1
@@ -3362,7 +3362,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   settings: {fileID: 11400000, guid: 72bb351bb6f138f4c9ce578e50ccf703, type: 2}
-  color: {r: 0, g: 0.654902, b: 0.7490196, a: 1}
+  color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &569906928
 GameObject:
   m_ObjectHideFlags: 0
@@ -3906,7 +3906,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8f6d3c6e4250e84192f5b34ce9e71bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  glowColor: {r: 0.827451, g: 0.41960785, b: 1, a: 1}
+  glowColor: {r: 1, g: 1, b: 1, a: 1}
   glowBrightness: 2
   outlineWidth: 10
   alphaThreshold: 1
@@ -4014,7 +4014,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   settings: {fileID: 11400000, guid: 72bb351bb6f138f4c9ce578e50ccf703, type: 2}
-  color: {r: 0, g: 0.654902, b: 0.7490196, a: 1}
+  color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &670918325
 GameObject:
   m_ObjectHideFlags: 0
@@ -5381,7 +5381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8f6d3c6e4250e84192f5b34ce9e71bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  glowColor: {r: 0.827451, g: 0.41960785, b: 1, a: 1}
+  glowColor: {r: 1, g: 1, b: 1, a: 1}
   glowBrightness: 2
   outlineWidth: 10
   alphaThreshold: 1
@@ -5425,7 +5425,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   settings: {fileID: 11400000, guid: 72bb351bb6f138f4c9ce578e50ccf703, type: 2}
-  color: {r: 0, g: 0.654902, b: 0.7490196, a: 1}
+  color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1041085632
 GameObject:
   m_ObjectHideFlags: 0
