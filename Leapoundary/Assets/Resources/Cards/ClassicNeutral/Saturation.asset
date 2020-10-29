@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c63d2c7f3070d3a48a3d7042029ff764, type: 3}
   m_Name: Saturation
   m_EditorClassIdentifier: 
-  symbol: {fileID: 21300000, guid: 5c1073d6772fff9498648235a78fffc2, type: 3}
+  symbol: {fileID: 21300000, guid: e015f06795130174eb2321d30ff8d9f1, type: 3}
   materialGlow: {fileID: 2100000, guid: af56fc4168c500e4182d269ed540e089, type: 2}
   materialPlain: {fileID: 2100000, guid: 3f7621bc16e6ae4448b4070ffaefeb83, type: 2}
   name: Saturation

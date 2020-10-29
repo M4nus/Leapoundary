@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c63d2c7f3070d3a48a3d7042029ff764, type: 3}
   m_Name: SpawnTriangle2
   m_EditorClassIdentifier: 
-  symbol: {fileID: 21300000, guid: c1a945cfe58464f459e75d7a46a33f46, type: 3}
+  symbol: {fileID: 21300000, guid: 6e7f558d14c42ea47a7fdcde5aecbb2a, type: 3}
   materialGlow: {fileID: 2100000, guid: 18ca71018882ca7438f3e2c7cadf2ad5, type: 2}
   materialPlain: {fileID: 2100000, guid: 8de526ae95579c8479d76a0581b1484d, type: 2}
   name: Spawn
