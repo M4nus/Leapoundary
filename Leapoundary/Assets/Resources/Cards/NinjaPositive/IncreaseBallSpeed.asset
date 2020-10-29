@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c63d2c7f3070d3a48a3d7042029ff764, type: 3}
   m_Name: IncreaseBallSpeed
   m_EditorClassIdentifier: 
-  symbol: {fileID: 21300000, guid: f3a291a6f79b4244b8a50dcfe5860ff5, type: 3}
+  symbol: {fileID: 21300000, guid: 82635b5a675650f4a93a716d36b9f496, type: 3}
   materialGlow: {fileID: 2100000, guid: c596985b42597e74799db88ed3d599f8, type: 2}
   materialPlain: {fileID: 2100000, guid: d6400ccd1723ff04e8fb6c7ef50c49b9, type: 2}
   name: Ball speed

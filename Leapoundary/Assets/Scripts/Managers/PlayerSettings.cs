@@ -168,7 +168,7 @@ public class PlayerSettings : MonoBehaviour
 
             upgradeTime = true;
         }
-        if(borderHitCount >= 5 && borderHitCount < 10)
+        /*if(borderHitCount >= 5 && borderHitCount < 10)
         {
             leaps++;
             borderHitCount = 0;
@@ -177,7 +177,7 @@ public class PlayerSettings : MonoBehaviour
         {
             leaps += 2;
             borderHitCount = 0;
-        }
+        }*/
         gameObject.GetComponent<UpgradeSettings>().HueIncrement(1);
     }
 
