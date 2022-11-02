@@ -21,7 +21,7 @@ public class TurretShooting : MonoBehaviour
     
     void Update()
     {
-        if(Input.GetKey(KeyCode.Mouse0))
+        if(CanShoot() && Input.GetKey(KeyCode.Mouse0))
         {
             Laser();
         }
@@ -34,19 +34,18 @@ public class TurretShooting : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(ps.isBounced)
+        if(collision.gameObject.layer == LayerMask.NameToLayer("Ball"))
         {
             PlayerSettings.instance.ResetBall();
-            ps.isBounced = false;
         }
     }
-
+    
     private void ShootBall()
     {
         if(!UIManager.IsPointerOverUIElement())
         {
             ps.GetCrosshairDirection(gameObject);
-            ps.ball.GetComponent<Rigidbody2D>().AddForce(ps.ballSpeed * transform.right * Time.fixedDeltaTime, ForceMode2D.Impulse);
+            ps.ball.GetComponent<Rigidbody2D>().AddForce(ps.ballSpeed * transform.right, ForceMode2D.Impulse);
             ps.ball.transform.parent = null;
             AudioManager.instance.PlayRandom("TurretShoot");
         }
@@ -68,7 +67,7 @@ public class TurretShooting : MonoBehaviour
         hit = Physics2D.Raycast(pointer.position, direction, 40f);
 
 
-        if(Physics2D.Raycast((Vector2)pointer.position, direction, 40f));
+        if(Physics2D.Raycast((Vector2)pointer.position, direction, 40f))
         {
             line.enabled = true;
             line.positionCount = 2;

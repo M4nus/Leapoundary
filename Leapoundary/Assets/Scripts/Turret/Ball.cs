@@ -13,8 +13,8 @@ public class Ball : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        PlayerSettings.instance.isBounced = true;
-        if(collision.gameObject.layer == LayerMask.NameToLayer("Enemies"))
+        if(collision.gameObject.layer == LayerMask.NameToLayer("Enemies") 
+        || collision.gameObject.layer == LayerMask.NameToLayer("Kunai"))
         {
             GameObject ballParticles = ObjectPooler.sharedInstance.GetPooledObject("BallBreak");
             if(ballParticles != null)
@@ -30,9 +30,9 @@ public class Ball : MonoBehaviour
                 enemyParticles.SetActive(true);
             }
             collision.gameObject.SetActive(false);
+            PlayerSettings.instance.borderHitCount = 0;
             AudioManager.instance.PlayRandom("EnemyHit");
             AudioManager.instance.PlayRandom("BallReturn");
-            PlayerSettings.instance.isBounced = false;
         }
     }
 }

@@ -11,7 +11,8 @@ public class CardDisplay : MonoBehaviour
 {
     
     public Card card;
-    
+    public Settings settings;
+
     public Image symbolImage;
     public Button button;
     public TextMeshProUGUI titleText;
@@ -41,7 +42,14 @@ public class CardDisplay : MonoBehaviour
         symbolImage.sprite = card.symbol;
         titleText.text = card.name;
         descriptionText.text = card.description;
-        renderer.material = card.material;
+        if(settings.GetGraphicalOption() == 0)
+        {
+            renderer.material = card.materialPlain;
+        }
+        else if(settings.GetGraphicalOption() == 1)
+        {
+            renderer.material = card.materialGlow;
+        }
 
         // Add behaviour to card
         StartCoroutine(Dissolve());
@@ -129,7 +137,7 @@ public class CardDisplay : MonoBehaviour
             titleText.alpha = alpha + 1.1f;
             descriptionText.alpha = alpha + 1.1f;
             symbolImage.color = new Vector4(renderer.color.r, renderer.color.g, renderer.color.b, alpha + 1.1f);
-            alpha += Time.deltaTime * 2;
+            alpha += Time.unscaledDeltaTime * 2;
             yield return null;
         }
     }
@@ -150,7 +158,7 @@ public class CardDisplay : MonoBehaviour
                 //descriptionText.alpha = alpha + 0.6f;
                 //symbolImage.color = new Vector4(renderer.color.r, renderer.color.g, renderer.color.b, alpha + 0.6f);
             }
-            alpha -= Time.deltaTime * 2;
+            alpha -= Time.unscaledDeltaTime * 2;
             yield return null;
         }
         PlayerSettings.instance.cardsDissolved = true;

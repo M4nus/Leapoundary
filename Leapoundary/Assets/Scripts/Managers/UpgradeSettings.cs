@@ -32,10 +32,10 @@ public class UpgradeSettings : MonoBehaviour
 
     public void DecreaseBallSpeed(float amount)
     {
-        PlayerSettings.instance.ballSpeed -= amount;
+        PlayerSettings.instance.ballSpeed *= (100f - amount) / 100f;
 
-        if(PlayerSettings.instance.ballSpeed < 300)
-            PlayerSettings.instance.ballSpeed = 300;
+        if(PlayerSettings.instance.ballSpeed < 5f)
+            PlayerSettings.instance.ballSpeed = 5f;
     }
     
     public void AddTriangleAmount(int amount)
@@ -46,6 +46,11 @@ public class UpgradeSettings : MonoBehaviour
     public void AddStanderAmount(int amount)
     {
         PlayerSettings.instance.standerLimit += amount;
+    }
+
+    public void AddShurikenAmount(int amount)
+    {
+        PlayerSettings.instance.shurikenLimit += amount;
     }
 
     public void SpawnTriangle(int amount)
@@ -60,6 +65,12 @@ public class UpgradeSettings : MonoBehaviour
             spawner.SpawnStander();
     }
 
+    public void SpawnShuriken(int amount)
+    {
+        for(int i = 0; i < amount; i++)
+            spawner.SpawnShuriken();
+    }
+
     public void SpeedSpawnerStander()
     {
         if(PlayerSettings.instance.standerSpawnTime > 5)
@@ -70,6 +81,19 @@ public class UpgradeSettings : MonoBehaviour
     {
         if(PlayerSettings.instance.triangleSpawnTime > 5)
             PlayerSettings.instance.triangleSpawnTime -= 1f;
+    }
+
+    public void SpeedSpawnerShuriken()
+    {
+        if(PlayerSettings.instance.shurikenSpawnTime > 5)
+            PlayerSettings.instance.shurikenSpawnTime -= 1f;
+    }
+
+
+    public void SpeedSpawnerKunai()
+    {
+        if(PlayerSettings.instance.kunaiSpawnTime > 1)
+            PlayerSettings.instance.kunaiSpawnTime -= 1f;
     }
 
     #endregion
@@ -86,10 +110,10 @@ public class UpgradeSettings : MonoBehaviour
 
     public void IncreaseBallSpeed(float amount)
     {
-        PlayerSettings.instance.ballSpeed += amount;
+        PlayerSettings.instance.ballSpeed += (100 + amount) / 100f;
 
-        if(PlayerSettings.instance.ballSpeed > 1000)
-            PlayerSettings.instance.ballSpeed = 1000;
+        if(PlayerSettings.instance.ballSpeed > 25)
+            PlayerSettings.instance.ballSpeed = 25;
     }
 
     public void ClearEnemyType(string tag)
@@ -114,13 +138,25 @@ public class UpgradeSettings : MonoBehaviour
             PlayerSettings.instance.triangleSpawnTime += 1f;
     }
 
+    public void SlowSpawnerShuriken()
+    {
+        if(PlayerSettings.instance.shurikenSpawnTime < 20)
+            PlayerSettings.instance.shurikenSpawnTime += 1f;
+    }
+
+    public void SlowSpawnerKunai()
+    {
+        if(PlayerSettings.instance.kunaiSpawnTime < 20)
+            PlayerSettings.instance.kunaiSpawnTime += 1f;
+    }
+
     #endregion
 
     #region Neutral
 
-    public void HueIncrement()
+    public void HueIncrement(int value)
     {
-        color.hueShift.value += 30;
+        color.hueShift.value += value;
     }
 
     // Hue shift
@@ -159,5 +195,18 @@ public class UpgradeSettings : MonoBehaviour
             vignette.active = false;
     }
 
+
+    public void ToggleReflection()
+    {
+        if(!PlayerSettings.instance.isReflected)
+            PlayerSettings.instance.isReflected = true;
+        else
+            PlayerSettings.instance.isReflected = false;
+    }
+
+    public void ToggleWallsColor()
+    {
+        GetComponent<UIManager>().ChangeWallsColor();
+    }
     #endregion
 }

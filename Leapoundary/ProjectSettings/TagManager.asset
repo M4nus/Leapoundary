@@ -11,6 +11,10 @@ TagManager:
   - BorderHit
   - SpawnPlace
   - EnemyDeath
+  - Wall
+  - Shuriken
+  - Kunai
+  - Ball
   layers:
   - Default
   - TransparentFX
@@ -26,7 +30,7 @@ TagManager:
   - BlockingCollider
   - SpawningObject
   - Wall
-  - 
+  - Kunai
   - 
   - 
   - 

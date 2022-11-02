@@ -1,8 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering;
-using UnityEngine.Rendering.Universal;
+using UnityEngine.SceneManagement;
 
 public enum BallState
 {
@@ -13,11 +12,19 @@ public enum BallState
     Options
 }
 
+public enum GameType
+{
+    None,
+    Classic,
+    Ninja
+}
+
 public class PlayerSettings : MonoBehaviour
 {
     // Script with all the variables needed for ball, turret, enemies
     public static PlayerSettings instance;
 
+    public GameType gameType = GameType.None;
     public BallState ballState = BallState.Upgrade;
     
     public List<object> positiveCards = new List<object>();
@@ -31,20 +38,37 @@ public class PlayerSettings : MonoBehaviour
 
     public int lives = 3;
     public int leaps = 0;
+    public int borderHitCount = 0;
     public int triangleLimit = 5;
     public int standerLimit = 7;
+    public int shurikenLimit = 7;
+    public int kunaiLimit = 15;
     public int cardType;
-    [Range(300, 1000)]
+
+    [Range(0, 1000)]
     public float ballSpeed;
     public float triangleSpeed = 1f;
     public float triangleRotate = 200f;
     public float triangleSpawnTime = 15f;
     public float standerSpawnTime = 10f;
+    public float shurikenSpawnTime = 10f;
+    public float kunaiSpawnTime = 6f;
+
+    [HideInInspector]
     public bool upgradeTime = false;
-    public bool canSpawnTriangle = true;
-    public bool canSpawnStander = true;
+    [HideInInspector]
+    public bool canSpawnTriangle = false;
+    [HideInInspector]
+    public bool canSpawnStander = false;
+    [HideInInspector]
+    public bool canSpawnShuriken = false;
+    [HideInInspector]
+    public bool canSpawnKunai = false;
+    [HideInInspector]
     public bool cardsDissolved = false;
+    [HideInInspector]
     public bool isBounced = false;
+    [HideInInspector]
     public bool isReflected = false;
 
 
@@ -54,11 +78,31 @@ public class PlayerSettings : MonoBehaviour
             instance = this;
         else
             Destroy(gameObject);
-        
-        positiveCards.AddRange(Resources.LoadAll("Cards/Positive"));
-        negativeCards.AddRange(Resources.LoadAll("Cards/Negative"));
-        neutralCards.AddRange(Resources.LoadAll("Cards/Neutral"));
+
         //AudioManager.instance.Play("Void");
+
+        
+        if(SceneManager.GetActiveScene().name == "ClassicMode")
+            gameType = GameType.Classic;
+        else if(SceneManager.GetActiveScene().name == "RainbowMode")
+            gameType = GameType.Ninja;
+
+        if(gameType == GameType.Classic)
+        {
+            canSpawnTriangle = true;
+            canSpawnStander = true;
+            positiveCards.AddRange(Resources.LoadAll("Cards/ClassicPositive"));
+            negativeCards.AddRange(Resources.LoadAll("Cards/ClassicNegative"));
+            neutralCards.AddRange(Resources.LoadAll("Cards/ClassicNeutral"));
+        }
+        if(gameType == GameType.Ninja)
+        {
+            canSpawnShuriken = true;
+            canSpawnKunai = true;
+            positiveCards.AddRange(Resources.LoadAll("Cards/NinjaPositive"));
+            negativeCards.AddRange(Resources.LoadAll("Cards/NinjaNegative"));
+            neutralCards.AddRange(Resources.LoadAll("Cards/NinjaNeutral"));
+        }
     }
 
     private void Update()
@@ -66,12 +110,15 @@ public class PlayerSettings : MonoBehaviour
         // Checking whether ball was launched or not
         if(ballState != BallState.Death && ballState != BallState.Options)
         {
-            if(ball.transform.parent == currentTurret.transform && !upgradeTime)
-                ballState = BallState.Safe;
-            else if(ball.transform.parent != currentTurret.transform)
-                ballState = BallState.Launched;
-            else if(ball.transform.parent == currentTurret.transform && upgradeTime)
-                ballState = BallState.Upgrade;
+            if(ball != null)
+            {
+                if(ball.transform.parent == currentTurret.transform && !upgradeTime)
+                    ballState = BallState.Safe;
+                else if(ball.transform.parent != currentTurret.transform)
+                    ballState = BallState.Launched;
+                else if(ball.transform.parent == currentTurret.transform && upgradeTime)
+                    ballState = BallState.Upgrade;
+            }
         }
 
         if(ballState == BallState.Upgrade)
@@ -83,8 +130,26 @@ public class PlayerSettings : MonoBehaviour
         }
 
         // Checking if we can spawn enemies
+        if(gameType == GameType.Classic)
+        {
+            ClassicMode();
+        }
+        else if(gameType == GameType.Ninja)
+        {
+            NinjaMode();
+        }
+    }
+
+    public void ClassicMode()
+    {
         canSpawnTriangle = (ballState == BallState.Upgrade || GameObject.FindGameObjectsWithTag("Triangle").Length >= triangleLimit) ? false : true;
         canSpawnStander = (ballState == BallState.Upgrade || GameObject.FindGameObjectsWithTag("Stander").Length >= standerLimit) ? false : true;
+    }
+
+    public void NinjaMode()
+    {
+        canSpawnShuriken = (ballState == BallState.Upgrade || GameObject.FindGameObjectsWithTag("Shuriken").Length >= shurikenLimit) ? false : true;
+        canSpawnKunai = (ballState == BallState.Upgrade || GameObject.FindGameObjectsWithTag("Kunai").Length >= shurikenLimit) ? false : true;
     }
 
     public void CheckLeaps()
@@ -94,7 +159,6 @@ public class PlayerSettings : MonoBehaviour
         {
             //0 - positive, 1 - negative, 2 - neutral;
             float percentage = Random.value;
-            Debug.Log(percentage);
             if(percentage < 0.5f)
                 cardType = 0;
             else if(percentage < 0.8f)
@@ -104,10 +168,17 @@ public class PlayerSettings : MonoBehaviour
 
             upgradeTime = true;
         }
-        if(leaps % 25 == 0)
+        /*if(borderHitCount >= 5 && borderHitCount < 10)
         {
-            gameObject.GetComponent<UpgradeSettings>().HueIncrement();
+            leaps++;
+            borderHitCount = 0;
         }
+        else if(borderHitCount >= 10)
+        {
+            leaps += 2;
+            borderHitCount = 0;
+        }*/
+        gameObject.GetComponent<UpgradeSettings>().HueIncrement(1);
     }
 
     public void ResetBall()
@@ -157,8 +228,17 @@ public class PlayerSettings : MonoBehaviour
         positiveCards.Clear();
         negativeCards.Clear();
         neutralCards.Clear();
-        positiveCards.AddRange(Resources.LoadAll("Cards/Positive"));
-        negativeCards.AddRange(Resources.LoadAll("Cards/Negative"));
-        neutralCards.AddRange(Resources.LoadAll("Cards/Neutral"));
+        if(gameType == GameType.Classic)
+        {
+            positiveCards.AddRange(Resources.LoadAll("Cards/ClassicPositive"));
+            negativeCards.AddRange(Resources.LoadAll("Cards/ClassicNegative"));
+            neutralCards.AddRange(Resources.LoadAll("Cards/ClassicNeutral"));
+        }
+        if(gameType == GameType.Ninja)
+        {
+            positiveCards.AddRange(Resources.LoadAll("Cards/NinjaPositive"));
+            negativeCards.AddRange(Resources.LoadAll("Cards/NinjaNegative"));
+            neutralCards.AddRange(Resources.LoadAll("Cards/NinjaNeutral"));
+        }
     }
 }

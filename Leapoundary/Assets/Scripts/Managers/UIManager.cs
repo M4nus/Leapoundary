@@ -13,6 +13,10 @@ public class UIManager : MonoBehaviour
     public GameObject panel;
     public GameObject deathIcons;
     public GameObject optionsIcons;
+    public GameObject coloredWalls;
+    public GameObject whiteWalls;
+
+    private bool colorOff = true;
 
 
     // Start is called before the first frame update
@@ -40,6 +44,7 @@ public class UIManager : MonoBehaviour
         else
         {
             Time.timeScale = 1f;
+            Time.fixedDeltaTime = 0.02f * Time.timeScale;
             optionsIcons.SetActive(false);
         }
     }
@@ -60,16 +65,36 @@ public class UIManager : MonoBehaviour
     {
         FadeOut();
         Time.timeScale = 1f;
+        Time.fixedDeltaTime = 0.02f * Time.timeScale;
         PlayerSettings.instance.ballState = BallState.Safe;
-        SceneManager.LoadScene("BaseMobile");
+        if(SceneManager.GetActiveScene().name == "ClassicMode")
+            SceneManager.LoadScene("ClassicMode");
+        if(SceneManager.GetActiveScene().name == "RainbowMode")
+            SceneManager.LoadScene("RainbowMode");
     }
 
     public void GoToMenu()
     {
         FadeOut();
         Time.timeScale = 1f;
+        Time.fixedDeltaTime = 0.02f * Time.timeScale;
         PlayerSettings.instance.ballState = BallState.Safe;
         SceneManager.LoadScene("Menu");
+    }
+
+    public void ChangeWallsColor()
+    {
+        colorOff = !colorOff;
+        if(colorOff)
+        {
+            whiteWalls?.SetActive(true);
+            coloredWalls?.SetActive(false);
+        }
+        else
+        {
+            whiteWalls?.SetActive(false);
+            coloredWalls?.SetActive(true);
+        }
     }
 
     ///Returns 'true' if we touched or hovering on Unity UI element.

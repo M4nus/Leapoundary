@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 814914802565795450}
   - component: {fileID: 814914802565795448}
   - component: {fileID: 814914802565795449}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: CornerTR
-  m_TagString: Untagged
+  m_TagString: Mirrors
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57,7 +57,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1cdf5df3ab92ed944906307a919f2815, type: 2}
+  - {fileID: 2100000, guid: 5bab8b92d5d51804c8a8e3976e17852d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -159,9 +159,9 @@ GameObject:
   - component: {fileID: 814914802639481015}
   - component: {fileID: 814914802639481013}
   - component: {fileID: 814914802639481018}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: CornerTL
-  m_TagString: Untagged
+  m_TagString: Mirrors
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -203,7 +203,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 881c621fc30c42e47a59fa127a756a48, type: 2}
+  - {fileID: 2100000, guid: 038b64b77682d154da7667ee3dc0e21d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -337,9 +337,9 @@ GameObject:
   - component: {fileID: 814914803077990367}
   - component: {fileID: 814914803077990365}
   - component: {fileID: 814914803077990306}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: CornerBR
-  m_TagString: Untagged
+  m_TagString: Mirrors
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -381,7 +381,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 855998bc6b8fe1041978926d838fa079, type: 2}
+  - {fileID: 2100000, guid: 36255b03b57147641bdfa03e5149f78b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -483,9 +483,9 @@ GameObject:
   - component: {fileID: 814914803103439496}
   - component: {fileID: 814914803103439497}
   - component: {fileID: 814914803103439502}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: WallTop
-  m_TagString: Untagged
+  m_TagString: Mirrors
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -527,7 +527,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4cb4ec1084a363b4f918d9417f3e5f86, type: 2}
+  - {fileID: 2100000, guid: 362f23bb7053c8e4f833c173a59e1cf1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -629,9 +629,9 @@ GameObject:
   - component: {fileID: 814914803432817920}
   - component: {fileID: 814914803432817921}
   - component: {fileID: 814914803432817926}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: WallLeft
-  m_TagString: Untagged
+  m_TagString: Mirrors
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -673,7 +673,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 889b2acc9df33af45b32bc940ee9ece4, type: 2}
+  - {fileID: 2100000, guid: e28dc72e0fc1ae54baace02cc1dad55b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -775,9 +775,9 @@ GameObject:
   - component: {fileID: 814914804296172394}
   - component: {fileID: 814914804296172395}
   - component: {fileID: 814914804296172392}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: WallRight
-  m_TagString: Untagged
+  m_TagString: Mirrors
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -819,7 +819,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: dc2e63ccdcc9d354f9184a375ba36c6c, type: 2}
+  - {fileID: 2100000, guid: 974cc0c3cf3475d4b94a82d9d1fcf6d7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -921,9 +921,9 @@ GameObject:
   - component: {fileID: 814914804362870042}
   - component: {fileID: 814914804362870040}
   - component: {fileID: 814914804362870041}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: CornerBL
-  m_TagString: Untagged
+  m_TagString: Mirrors
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -965,7 +965,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d550ab9e4325f0d4da57a3d67d090e16, type: 2}
+  - {fileID: 2100000, guid: 174e63e657f25914aa1157d48bf22bb2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1067,9 +1067,9 @@ GameObject:
   - component: {fileID: 814914804394638077}
   - component: {fileID: 814914804394638018}
   - component: {fileID: 814914804394638019}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: WallBottom
-  m_TagString: Untagged
+  m_TagString: Mirrors
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1111,7 +1111,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a9cd1aa0005e49748b9c52f452120a75, type: 2}
+  - {fileID: 2100000, guid: b1223d701e7f2d24c8eba083dc4ebcb9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1377,7 +1377,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7206956675651118801}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
   m_Name: 
